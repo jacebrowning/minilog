@@ -8,10 +8,6 @@ name = "pypi"
 
 python_version = "3"
 
-[packages]
-
-click = "*"
-
 [dev-packages]
 
 # Linters

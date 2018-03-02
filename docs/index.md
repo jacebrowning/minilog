@@ -1,3 +1,1 @@
-# log
-
-Minimalistic wrapper for Python logging.
+../README.md
