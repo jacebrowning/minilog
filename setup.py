@@ -55,11 +55,6 @@ setuptools.setup(
 
     packages=setuptools.find_packages(),
 
-    entry_points={'console_scripts': [
-        'log-cli = log.cli:main',
-        'log-gui = log.gui:main',
-    ]},
-
     long_description=build_description(),
     license='MIT',
     classifiers=[
@@ -74,9 +69,4 @@ setuptools.setup(
         'Programming Language :: Python :: 3.5',
         'Programming Language :: Python :: 3.6',
     ],
-
-    install_requires=[
-        # TODO: Add your library's requirements here
-        "click ~= 6.0",
-    ]
 )
