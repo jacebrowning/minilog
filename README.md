@@ -32,6 +32,10 @@ $ pip install minilog
 
 # Setup
 
-Currently, `minilog` works out of the box, but that might change.
+Optionally, change for format for all logging handlers:
+
+```python
+log.init("%(levelname)s: %(name)s: %(message)s")
+```
 
 

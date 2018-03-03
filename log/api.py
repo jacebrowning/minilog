@@ -1,7 +1,10 @@
 import inspect
 import logging
 
+
 __all__ = [
+    'init',
+
     'debug',
     'info',
     'warn', 'warning',
@@ -12,6 +15,13 @@ __all__ = [
 
     'log',
 ]
+
+
+def init(fmt=None):
+    if fmt:
+        formatter = logging.Formatter(fmt)
+        for handler in logging.root.handlers:
+            handler.setFormatter(formatter)
 
 
 def debug(message, *args, **kwargs):
