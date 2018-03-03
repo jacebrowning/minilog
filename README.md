@@ -2,38 +2,36 @@ Unix: [![Unix Build Status](https://img.shields.io/travis/jacebrowning/minilog/d
 
 # Overview
 
-Minimalistic wrapper for Python logging.
+Instead of including this boilerplate in every module:
 
-This project was generated with [cookiecutter](https://github.com/audreyr/cookiecutter) using [jacebrowning/template-python](https://github.com/jacebrowning/template-python).
+```python
+import logging
 
-# Setup
+log = logging.getLogger(__name__)
 
-## Requirements
+def foobar(name):
+    log.info("Hello, %s!", name)
+```
 
-* Python 3.3+
+with this package you can simply:
 
-## Installation
+```python
+import log
 
-Install minilog with pip:
+def foobar(name):
+    log.info("Hello, %s!", name)
+```
+
+It will produce the exact same standard library `logging` records behind the scenes.
+
+# Installation
 
 ```sh
 $ pip install minilog
 ```
 
-or directly from the source code:
+# Setup
 
-```sh
-$ git clone https://github.com/jacebrowning/minilog.git
-$ cd minilog
-$ python setup.py install
-```
+Currently, `minilog` works out of the box, but that might change.
 
-# Usage
 
-After installation, the package can imported:
-
-```sh
-$ python
->>> import log
->>> log.__version__
-```
