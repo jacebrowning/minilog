@@ -16,12 +16,12 @@ def describe_api():
 def describe_output():
 
     def it_includes_the_caller_location(expect, caplog):
-        demo.foobar()
+        demo.greet("caller")
         expect(caplog.text) == \
-            "demo.py                      5 ERROR    Hello, world!\n"
+            "demo.py                      5 ERROR    Hello, caller!\n"
 
     @pytest.mark.last
     def it_can_be_formatted_with_init(expect, caplog):
         log.init(format="%(levelname)s: %(name)s: %(message)s")
-        demo.foobar()
-        expect(caplog.text) == "ERROR: tests.demo: Hello, world!\n"
+        demo.greet("format")
+        expect(caplog.text) == "ERROR: tests.demo: Hello, format!\n"

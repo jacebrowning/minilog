@@ -9,7 +9,7 @@ import logging
 
 log = logging.getLogger(__name__)
 
-def foobar(name):
+def greet(name):
     log.info("Hello, %s!", name)
 ```
 
@@ -18,7 +18,7 @@ with this package you can simply:
 ```python
 import log
 
-def foobar(name):
+def greet(name):
     log.info("Hello, %s!", name)
 ```
 
