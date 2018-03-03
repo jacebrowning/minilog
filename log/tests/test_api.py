@@ -17,10 +17,14 @@ def describe_log():
 
 @pytest.mark.parametrize("name, levelname", [
     ('critical', 'CRITICAL'),
+    ('d', 'DEBUG'),
     ('debug', 'DEBUG'),
+    ('e', 'ERROR'),
     ('error', 'ERROR'),
     # ('exception', 'ERROR'),
+    ('i', 'INFO'),
     ('info', 'INFO'),
+    ('w', 'WARNING'),
     ('warn', 'WARNING'),
     ('warning', 'WARNING'),
 ])

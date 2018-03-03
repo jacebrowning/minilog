@@ -5,10 +5,10 @@ import logging
 __all__ = [
     'init',
 
-    'debug',
-    'info',
-    'warn', 'warning',
-    'error',
+    'd', 'debug',
+    'i', 'info',
+    'w', 'warn', 'warning',
+    'e', 'error',
     'critical',
 
     # 'exception',
@@ -53,7 +53,10 @@ def log(level, message, *args, **kwargs):
 #     return log(logging.DEBUG, *args, **kwargs)
 
 
-warn = warning
+d = debug
+i = info
+w = warn = warning
+e = error
 
 
 def _log(level, message, *args, **kwargs):

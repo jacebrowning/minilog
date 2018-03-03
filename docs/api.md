@@ -15,7 +15,12 @@ log.critical(message, *args)
 As well as convenience methods:
 
 ```python
-log.warn(message, *args)  # an alias for `warning(...)`
+log.warn(message, *args)  # WARNING
+
+log.d(message, *args)     # DEBUG
+log.i(message, *args)     # INFO
+log.w(message, *args)     # WARNING
+log.e(message, *args)     # ERROR
 ```
 
 And programmatic logging:
@@ -26,7 +31,7 @@ log.log(level, message, *args)
 
 # Configuration
 
-Optionally, change the format for all logging handlers:
+Optionally, set the format for all logging handlers:
 
 ```python
 log.init(format="%(levelname)s: %(name)s: %(message)s")
