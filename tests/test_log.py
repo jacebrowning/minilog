@@ -22,6 +22,6 @@ def describe_output():
 
     @pytest.mark.last
     def it_can_be_formatted_with_init(expect, caplog):
-        log.init("%(levelname)s: %(name)s: %(message)s")
+        log.init(format="%(levelname)s: %(name)s: %(message)s")
         demo.foobar()
         expect(caplog.text) == "ERROR: tests.demo: Hello, world!\n"

@@ -26,8 +26,8 @@ log.log(level, message, *args)
 
 # Configuration
 
-Optionally, change for format for all logging handlers:
+Optionally, change the format for all logging handlers:
 
 ```python
-log.init("%(levelname)s: %(name)s: %(message)s")
+log.init(format="%(levelname)s: %(name)s: %(message)s")
 ```

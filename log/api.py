@@ -17,9 +17,10 @@ __all__ = [
 ]
 
 
-def init(fmt=None):
-    if fmt:
-        formatter = logging.Formatter(fmt)
+def init(**kwargs):
+    logging.basicConfig(**kwargs)
+    if 'format' in kwargs:
+        formatter = logging.Formatter(kwargs['format'])
         for handler in logging.root.handlers:
             handler.setFormatter(formatter)
 
