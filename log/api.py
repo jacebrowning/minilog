@@ -46,11 +46,18 @@ warn = warning
 
 
 def _log(level, message, *args, **kwargs):
-    stack = inspect.stack()
-    frame = stack[2]
-    module = inspect.getmodule(frame.frame)
-    logger = logging.getLogger(module.__name__)
-    record = logger.makeRecord(module.__name__, level,
-                               frame.filename, frame.lineno, message,
-                               args=args, exc_info=None, extra=kwargs)
+    frame_info = inspect.stack()[3]
+    module = inspect.getmodule(frame_info.frame)
+    logger = logging.getLogger()
+    record = logger.makeRecord(
+        module.__name__,
+        level,
+        fn=frame_info.filename,
+        lno=frame_info.lineno,
+        msg=message,
+        args=args,
+        exc_info=None,
+        extra=kwargs,
+        sinfo=None,
+    )
     logger.handle(record)

@@ -84,7 +84,7 @@ RANDOM_SEED ?= $(shell date +%s)
 FAILURES := .cache/v/cache/lastfailed
 REPORTS ?= xmlreport
 
-PYTEST_CORE_OPTIONS := -ra -vv
+PYTEST_CORE_OPTIONS := -ra -vv --log-format="%(levelname)s: %(name)s: %(message)s"
 PYTEST_COV_OPTIONS := --cov=$(PACKAGE) --no-cov-on-fail --cov-report=term-missing:skip-covered --cov-report=html
 PYTEST_RANDOM_OPTIONS := --random --random-seed=$(RANDOM_SEED)
 

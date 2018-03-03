@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "26415aa726cb96613083d63c369fd4e8059448ccde2e16c35097846783e031c4"
+            "sha256": "5cf1c578f17ca28b162b2dfabd1b5584b66a7ffe2dda1bbb88f9a6c1f239bea7"
         },
         "host-environment-markers": {
             "implementation_name": "cpython",
@@ -39,10 +39,10 @@
         },
         "astroid": {
             "hashes": [
-                "sha256:db5cfc9af6e0b60cd07c19478fb54021fc20d2d189882fbcbc94fc69a8aecc58",
-                "sha256:f0a0e386dbca9f93ea9f3ea6f32b37a24720502b7baa9cb17c3976a680d43a06"
+                "sha256:39a21dd2b5d81a6731dc0ac2884fa419532dffd465cdd43ea6c168d36b76efb3",
+                "sha256:492c2a2044adbf6a84a671b7522e9295ad2f6a7c781b899014308db25312dd35"
             ],
-            "version": "==1.6.1"
+            "version": "==1.5.3"
         },
         "attrs": {
             "hashes": [
@@ -50,13 +50,6 @@
                 "sha256:1c7960ccfd6a005cd9f7ba884e6316b5e430a3f1a6c37c5f87d8b43f83b54ec9"
             ],
             "version": "==17.4.0"
-        },
-        "backports-abc": {
-            "hashes": [
-                "sha256:52089f97fe7a9aa0d3277b220c1d730a85aefd64e1b2664696fe35317c5470a7",
-                "sha256:033be54514a03e255df75c5aee8f9e672f663f93abb723444caec8fe43437bde"
-            ],
-            "version": "==0.5"
         },
         "backports.shutil-get-terminal-size": {
             "hashes": [
@@ -336,10 +329,10 @@
         },
         "pylint": {
             "hashes": [
-                "sha256:156839bedaa798febee72893beef00c650c2e7abafb5586fc7a6a56be7f80412",
-                "sha256:4fe3b99da7e789545327b75548cee6b511e4faa98afe268130fea1af4b5ec022"
+                "sha256:f3287a9ee5427b013df37cfddd5e9e89df5b03dacb2e2ea448e7b78dd27b674b",
+                "sha256:b4d4d368f1d3834807d9d98f6ebe2af52c8e71c7c641a5a4cf87f479701c884a"
             ],
-            "version": "==1.8.2"
+            "version": "==1.7.6"
         },
         "pync": {
             "hashes": [
@@ -427,13 +420,6 @@
                 "sha256:f6a531936c6fa4c6cfce1b9c10d5c4f498d16528d2a54a22ca00011205a187b5"
             ],
             "version": "==0.8.0"
-        },
-        "singledispatch": {
-            "hashes": [
-                "sha256:833b46966687b3de7f438c761ac475213e53b306740f1abfaa86e1d1aae56aa8",
-                "sha256:5b06af87df13818d14f08a028e42f566640aef80805c3b50c5056b086e3c2b9c"
-            ],
-            "version": "==3.4.0.3"
         },
         "six": {
             "hashes": [
