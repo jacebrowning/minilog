@@ -2,10 +2,15 @@ Unix: [![Unix Build Status](https://img.shields.io/travis/jacebrowning/minilog/d
 
 # Overview
 
-Instead of including this boilerplate in every module:
+Instead of including this boilerplate:
 
 ```python
-import logging
+import logging 
+
+logging.basicConfig(
+    level=logging.INFO,
+    format="%(levelname)s: %(name)s: %(message)s",
+)
 
 log = logging.getLogger(__name__)
 

@@ -1,6 +1,9 @@
 import inspect
 import logging
 
+DEFAULT_LEVEL = logging.INFO
+DEFAULT_FORMAT = "%(levelname)s: %(name)s: %(message)s"
+
 
 __all__ = [
     'init',
@@ -16,13 +19,21 @@ __all__ = [
     'log',
 ]
 
+_initialized = False
+
 
 def init(**kwargs):
+    custom_format = kwargs.get('format')
+    kwargs['level'] = kwargs.get('level', DEFAULT_LEVEL)
+    kwargs['format'] = kwargs.get('format', DEFAULT_FORMAT)
     logging.basicConfig(**kwargs)
-    if 'format' in kwargs:
-        formatter = logging.Formatter(kwargs['format'])
+    if custom_format:
+        formatter = logging.Formatter(custom_format)
         for handler in logging.root.handlers:
             handler.setFormatter(formatter)
+
+    global _initialized
+    _initialized = True
 
 
 def debug(message, *args, **kwargs):
@@ -60,8 +71,12 @@ e = error
 
 
 def _log(level, message, *args, **kwargs):
+    if not _initialized:
+        init()
+
     frame, filename, lineno, *_ = inspect.stack()[3]
     module = inspect.getmodule(frame)
+
     logger = logging.getLogger()
     record = logger.makeRecord(
         module.__name__,
