@@ -1,4 +1,6 @@
-This package is a drop-in replacement for `logging.Logger` objects.
+# Logging
+
+The package intends to be a drop-in replacement for `logging.Logger` objects.
 
 It supports standard the logging API:
 
@@ -20,4 +22,12 @@ And programmatic logging:
 
 ```python
 log.log(level, message, *args)
+```
+
+# Configuration
+
+Optionally, change for format for all logging handlers:
+
+```python
+log.init("%(levelname)s: %(name)s: %(message)s")
 ```

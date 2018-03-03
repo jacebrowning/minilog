@@ -29,13 +29,3 @@ It will produce the exact same standard library `logging` records behind the sce
 ```sh
 $ pip install minilog
 ```
-
-# Setup
-
-Optionally, change for format for all logging handlers:
-
-```python
-log.init("%(levelname)s: %(name)s: %(message)s")
-```
-
-
