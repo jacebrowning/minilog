@@ -8,7 +8,7 @@ It supports standard the logging API:
 - `log.error(message, *args)`
 - `log.critical(message, *args)`
 
-As well as convince methods:
+As well as convinience methods:
 
 - `log.warn(message, *args)` an alias for `.warning()`
 
