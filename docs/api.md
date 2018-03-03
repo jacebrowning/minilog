@@ -1,17 +1,23 @@
-This package is a drop-in replacement for `logging.getLogger()` objects.
+This package is a drop-in replacement for `logging.Logger` objects.
 
 It supports standard the logging API:
 
-- `log.debug(message, *args)`
-- `log.info(message, *args)`
-- `log.warning(message, *args)`
-- `log.error(message, *args)`
-- `log.critical(message, *args)`
+```python
+log.debug(message, *args)
+log.info(message, *args)
+log.warning(message, *args)
+log.error(message, *args)
+log.critical(message, *args)
+```
 
-As well as convince methods:
+As well as convenience methods:
 
-- `log.warn(message, *args)` an alias for `.warning()`
+```python
+log.warn(message, *args)  # an alias for `warning(...)`
+```
 
 And programmatic logging:
 
-- `log.log(level, message, *args)`
+```python
+log.log(level, message, *args)
+```

@@ -1,7 +1,10 @@
 import inspect
 import logging
 
+
 __all__ = [
+    'init',
+
     'debug',
     'info',
     'warn', 'warning',
@@ -12,6 +15,13 @@ __all__ = [
 
     'log',
 ]
+
+
+def init(fmt=None):
+    if fmt:
+        formatter = logging.Formatter(fmt)
+        for handler in logging.root.handlers:
+            handler.setFormatter(formatter)
 
 
 def debug(message, *args, **kwargs):
@@ -46,14 +56,14 @@ warn = warning
 
 
 def _log(level, message, *args, **kwargs):
-    frame_info = inspect.stack()[3]
-    module = inspect.getmodule(frame_info.frame)
+    frame, filename, lineno, *_ = inspect.stack()[3]
+    module = inspect.getmodule(frame)
     logger = logging.getLogger()
     record = logger.makeRecord(
         module.__name__,
         level,
-        fn=frame_info.filename,
-        lno=frame_info.lineno,
+        fn=filename,
+        lno=lineno,
         msg=message,
         args=args,
         exc_info=None,
