@@ -22,6 +22,6 @@ def describe_output():
 
     @pytest.mark.last
     def it_can_be_formatted_with_init(expect, caplog):
-        log.init(format=log.api.DEFAULT_FORMAT)
+        log.init(format=log.helpers.DEFAULT_FORMAT)
         demo.greet("format")
         expect(caplog.text) == "ERROR: tests.demo: Hello, format!\n"

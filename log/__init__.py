@@ -1,4 +1,10 @@
-from .api import *  # pylint: disable=wildcard-import
+from .logger import *  # pylint: disable=wildcard-import
+from .helpers import init
+
+d = debug
+i = info
+w = warn = warning
+e = error
 
 __project__ = 'minilog'
 __version__ = '0.1'
