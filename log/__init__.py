@@ -7,4 +7,4 @@ w = warn = warning
 e = error
 
 __project__ = 'minilog'
-__version__ = '0.2'
+__version__ = '0.2.1'
