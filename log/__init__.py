@@ -1,5 +1,5 @@
 from .logger import *  # pylint: disable=wildcard-import
-from .helpers import init
+from .helpers import init, silence
 
 d = debug
 i = info

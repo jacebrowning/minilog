@@ -21,3 +21,17 @@ def init(**kwargs):
 
     global initialized
     initialized = True
+
+
+def silence(*names, allow_info=False, allow_warning=False, allow_error=False):
+    if allow_info:
+        level = logging.INFO
+    elif allow_warning:
+        level = logging.WARNING
+    elif allow_error:
+        level = logging.ERROR
+    else:
+        level = logging.CRITICAL
+
+    for name in names:
+        logging.getLogger(name).setLevel(level)
