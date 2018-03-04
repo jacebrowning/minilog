@@ -9,9 +9,10 @@ DEFAULT_FORMAT = "%(levelname)s: %(name)s: %(message)s"
 initialized = False
 
 
-def init(**kwargs):
+def init(debug=False, **kwargs):
     custom_format = kwargs.get('format')
-    kwargs['level'] = kwargs.get('level', DEFAULT_LEVEL)
+    default_level = logging.DEBUG if debug else DEFAULT_LEVEL
+    kwargs['level'] = kwargs.get('level', default_level)
     kwargs['format'] = kwargs.get('format', DEFAULT_FORMAT)
     logging.basicConfig(**kwargs)
     if custom_format:

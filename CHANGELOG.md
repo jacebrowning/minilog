@@ -1,5 +1,9 @@
 # Revision History
 
+## 0.2.1 (2018/03/04)
+
+- Removed the Python version check on installation.
+
 ## 0.2 (2018/03/03)
 
 - Added method to force logging format: `log.init(format="...")`

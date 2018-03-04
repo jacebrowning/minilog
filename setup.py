@@ -4,19 +4,11 @@
 
 import os
 import sys
-import logging
 
 import setuptools
 
 
 PACKAGE_NAME = 'log'
-MINIMUM_PYTHON_VERSION = '3.0'
-
-
-def check_python_version():
-    """Exit when the Python version is too low."""
-    if sys.version < MINIMUM_PYTHON_VERSION:
-        sys.exit("Python {0}+ is required.".format(MINIMUM_PYTHON_VERSION))
 
 
 def read_package_variable(key, filename='__init__.py'):
@@ -27,8 +19,7 @@ def read_package_variable(key, filename='__init__.py'):
             parts = line.strip().split(' ', 2)
             if parts[:-1] == [key, '=']:
                 return parts[-1].strip("'")
-    logging.warning("'%s' not found in '%s'", key, module_path)
-    return None
+    sys.exit("'%s' not found in '%s'", key, module_path)
 
 
 def build_description():
@@ -41,8 +32,6 @@ def build_description():
     else:
         return readme + '\n' + changelog
 
-
-check_python_version()
 
 setuptools.setup(
     name=read_package_variable('__project__'),
