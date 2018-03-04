@@ -2,7 +2,7 @@ Unix: [![Unix Build Status](https://img.shields.io/travis/jacebrowning/minilog/d
 
 # Overview
 
-Instead of including this boilerplate:
+Every project should utilize logging, but sometimes the required boilerplate is too much. Instead of including this:
 
 ```python
 import logging 

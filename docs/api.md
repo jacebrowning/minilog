@@ -31,8 +31,15 @@ log.log(level, message, *args)
 
 # Configuration
 
-Optionally, set the format for all logging handlers:
+Set the format for all logging handlers:
 
 ```python
 log.init(format="%(levelname)s: %(name)s: %(message)s")
+```
+
+Set the logging level for specific named loggers:
+
+```python
+log.silence('selenium')
+log.silence('werkzeug', 'requests', allow_warning=True)
 ```
