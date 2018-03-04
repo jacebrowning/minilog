@@ -1,5 +1,5 @@
 import log
 
 
-def foobar(name="world"):
+def greet(name):
     log.error("Hello, %s!", name)

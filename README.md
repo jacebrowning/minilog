@@ -2,14 +2,19 @@ Unix: [![Unix Build Status](https://img.shields.io/travis/jacebrowning/minilog/d
 
 # Overview
 
-Instead of including this boilerplate in every module:
+Every project should utilize logging, but sometimes the required boilerplate is too much. Instead of including this:
 
 ```python
-import logging
+import logging 
+
+logging.basicConfig(
+    level=logging.INFO,
+    format="%(levelname)s: %(name)s: %(message)s",
+)
 
 log = logging.getLogger(__name__)
 
-def foobar(name):
+def greet(name):
     log.info("Hello, %s!", name)
 ```
 
@@ -18,7 +23,7 @@ with this package you can simply:
 ```python
 import log
 
-def foobar(name):
+def greet(name):
     log.info("Hello, %s!", name)
 ```
 
@@ -29,13 +34,3 @@ It will produce the exact same standard library `logging` records behind the sce
 ```sh
 $ pip install minilog
 ```
-
-# Setup
-
-Optionally, change for format for all logging handlers:
-
-```python
-log.init("%(levelname)s: %(name)s: %(message)s")
-```
-
-
