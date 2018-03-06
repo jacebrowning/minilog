@@ -4,6 +4,14 @@ url = "https://pypi.python.org/simple"
 verify_ssl = true
 name = "pypi"
 
+[requires]
+
+python_version = "3"
+
+[packages]
+
+minilog = { path = ".", editable = true }
+
 [dev-packages]
 
 # Linters
@@ -12,16 +20,15 @@ astroid = "~=1.5.3" # temporary to work around apparent regression in 1.6
 pycodestyle = "*"
 pydocstyle = "*"
 
-# Testing
+# # Testing
 pytest = "~= 3.3"
 pytest-describe = "*"
-pytest-expecter = "~=1.1"
+pytest-expecter = "*"
 pytest-random = "*"
 pytest-ordering = "*"
 pytest-cov = "*"
-freezegun = "*"
 
-# Reports
+# # Reports
 "coverage.space" = "*"
 
 # Documentation
