@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "5ce91b3ac0e4c5e31534053d998fba3c07cccce75eb9fd480c85f491cdf0d133"
+            "sha256": "7ccd9267ff8075bd8803928257e72fb4db48c5566192171231a2a0f8765115fc"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -76,7 +76,6 @@
                 "sha256:463f8483208e921368c9f306094eb6f725c6ca42b0f97e313cb5d5512459feda",
                 "sha256:48eb22f4f8461b1df5734a074b57042430fb06e1d61bd1e11b078c0fe6d7a1f1"
             ],
-            "markers": "sys_platform == 'win32'",
             "version": "==0.3.9"
         },
         "coverage": {
@@ -218,6 +217,13 @@
             ],
             "version": "==2.5.1"
         },
+        "macfsevents": {
+            "hashes": [
+                "sha256:1324b66b356051de662ba87d84f73ada062acd42b047ed1246e60a449f833e10"
+            ],
+            "markers": "sys_platform == 'darwin'",
+            "version": "==0.8.1"
+        },
         "macholib": {
             "hashes": [
                 "sha256:7f76a7ef4f58f85889dec25fb532bad5acfd461c444738dfeb2e7bf855d5906b",
@@ -321,6 +327,13 @@
             ],
             "version": "==1.7.6"
         },
+        "pync": {
+            "hashes": [
+                "sha256:85737aab9fc69cf59dc9fe831adbe94ac224944c05e297c98de3c2413f253530"
+            ],
+            "markers": "sys_platform == 'darwin'",
+            "version": "==1.6.1"
+        },
         "pytest": {
             "hashes": [
                 "sha256:062027955bccbc04d2fcd5d79690947e018ba31abe4c90b2c6721abec734261b",
@@ -361,6 +374,13 @@
                 "sha256:92f25db8c5d9ffc20d90b51997b914372d6955cb9cf1f6ead45b90514fc0eddd"
             ],
             "version": "==0.2"
+        },
+        "python-dateutil": {
+            "hashes": [
+                "sha256:891c38b2a02f5bb1be3e4793866c8df49c7d19baabf9c1bad62547e0b4866aca",
+                "sha256:95511bae634d69bc7329ba55e646499a842bc4ec342ad54a8cdb65645a0aad3c"
+            ],
+            "version": "==2.6.1"
         },
         "python-termstyle": {
             "hashes": [
