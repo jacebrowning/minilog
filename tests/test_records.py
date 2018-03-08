@@ -16,7 +16,7 @@ def describe_text():
 
     @pytest.mark.last
     def it_can_be_formatted_with_init(expect, caplog):
-        log.init(format=log.helpers.DEFAULT_FORMAT)
+        log.init(format=log.helpers.DEFAULT_FORMAT, level=log.WARNING)
         demo.greet("format")
         expect(caplog.text) == "ERROR: tests.demo: Hello, format!\n"
 

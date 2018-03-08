@@ -30,6 +30,7 @@ Set the format for all logging handlers:
 ```python
 log.init(format="%(levelname)s: %(name)s: %(message)s")
 log.init(format="%(levelname)s: %(name)s: %(message)s", debug=True)
+log.init(format="%(levelname)s: %(name)s: %(message)s", level=log.WARNING)
 ```
 
 Set the logging level for specific named loggers:
