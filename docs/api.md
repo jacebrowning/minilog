@@ -1,8 +1,6 @@
 # Logging
 
-The package intends to be a drop-in replacement for `logging.Logger` objects.
-
-It supports standard the logging API:
+This package intends to be a drop-in replacement for `logging.Logger` objects. It supports standard the logging API:
 
 ```python
 log.debug(message, *args)
@@ -10,6 +8,8 @@ log.info(message, *args)
 log.warning(message, *args)
 log.error(message, *args)
 log.critical(message, *args)
+
+log.log(level, message, *args)
 ```
 
 As well as convenience methods:
@@ -23,12 +23,6 @@ log.w(message, *args)     # WARNING
 log.e(message, *args)     # ERROR
 ```
 
-And programmatic logging:
-
-```python
-log.log(level, message, *args)
-```
-
 # Configuration
 
 Set the format for all logging handlers:
@@ -36,6 +30,7 @@ Set the format for all logging handlers:
 ```python
 log.init(format="%(levelname)s: %(name)s: %(message)s")
 log.init(format="%(levelname)s: %(name)s: %(message)s", debug=True)
+log.init(format="%(levelname)s: %(name)s: %(message)s", level=log.WARNING)
 ```
 
 Set the logging level for specific named loggers:
