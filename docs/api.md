@@ -1,6 +1,6 @@
 # Logging
 
-This package intends to be a drop-in replacement for `logging.Logger` objects. It supports standard the logging API:
+This package intends to be a drop-in replacement for `logging.Logger` objects. It supports the standard logging API:
 
 ```python
 log.debug(message, *args)
