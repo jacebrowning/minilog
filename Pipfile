@@ -20,7 +20,7 @@ astroid = "~=1.5.3" # temporary to work around apparent regression in 1.6
 pycodestyle = "*"
 pydocstyle = "*"
 
-# # Testing
+# Testing
 pytest = "~= 3.3"
 pytest-describe = "*"
 pytest-expecter = "*"
@@ -28,8 +28,8 @@ pytest-random = "*"
 pytest-ordering = "*"
 pytest-cov = "*"
 
-# # Reports
-"coverage.space" = "*"
+# Reports
+coverage-space = "*"
 
 # Documentation
 mkdocs = "*"
