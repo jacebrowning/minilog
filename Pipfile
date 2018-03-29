@@ -15,8 +15,7 @@ minilog = { path = ".", editable = true }
 [dev-packages]
 
 # Linters
-pylint = "~=1.7.5"
-astroid = "~=1.5.3" # temporary to work around apparent regression in 1.6
+pylint = "*"
 pycodestyle = "*"
 pydocstyle = "*"
 
@@ -45,5 +44,5 @@ twine = "*"
 
 # Tooling
 sniffer = "*"
-pync = {version = "< 2.0", sys_platform = "== 'darwin'"}
-MacFSEvents = {version = "*", sys_platform = "== 'darwin'"}
+pync = { version = "<2.0", sys_platform = "== 'darwin'" }
+MacFSEvents = { version = "*", sys_platform = "== 'darwin'" }
