@@ -1,5 +1,9 @@
 # Revision History
 
+## 0.3.1 (2018/03/30)
+
+- Fixed bug where records were written for disabled levels.
+
 ## 0.3 (2018/03/15)
 
 - Exposed `logging` level constants on the `log` package.

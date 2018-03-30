@@ -14,6 +14,9 @@ def create_logger_record(level, message, *args, **kwargs):
     module = inspect.getmodule(frame)
 
     logger = logging.getLogger()
+    if not logger.isEnabledFor(level):
+        return
+
     record = logger.makeRecord(
         module.__name__,
         level,
