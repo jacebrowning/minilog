@@ -6,7 +6,7 @@ import inspect
 from . import helpers
 
 
-def create_logger_record(level, message, *args, **kwargs):
+def create_logger_record(level, message, *args, exc_info=None, **kwargs):
     if not helpers.initialized:
         helpers.init()
 
@@ -24,7 +24,7 @@ def create_logger_record(level, message, *args, **kwargs):
         lno=lineno,
         msg=message,
         args=args,
-        exc_info=None,
+        exc_info=exc_info,
         extra=kwargs,
         sinfo=None,
     )

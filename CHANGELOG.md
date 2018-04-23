@@ -3,6 +3,8 @@
 ## 0.4 (unreleased)
 
 - Added `reset=True` as `init()` option to replace all existing logging handlers.
+- Added `exception` logging API.
+- Added convenience alias: `log.c`, `log.exc`.
 
 ## 0.3.1 (2018/03/30)
 
