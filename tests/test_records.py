@@ -20,6 +20,15 @@ def describe_text():
         demo.greet("format")
         expect(caplog.text) == "ERROR: tests.demo: Hello, format!\n"
 
+    def it_can_include_exceptions(expect, caplog):
+        try:
+            print(1 / 0)
+        except ZeroDivisionError:
+            log.exception("exception")
+        expect(caplog.text).contains('Traceback ')
+        expect(caplog.text).contains('test_records.py", line 25, ')
+        expect(caplog.text).contains('ZeroDivisionError')
+
 
 def describe_silence():
 

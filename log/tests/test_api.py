@@ -5,13 +5,15 @@ import pytest
 import log
 
 
-@pytest.mark.parametrize("name, levelname", [
+@pytest.mark.parametrize('name, levelname', [
+    ('c', 'CRITICAL'),
     ('critical', 'CRITICAL'),
     ('d', 'DEBUG'),
     ('debug', 'DEBUG'),
     ('e', 'ERROR'),
     ('error', 'ERROR'),
-    # ('exception', 'ERROR'),
+    ('exc', 'ERROR'),
+    ('exception', 'ERROR'),
     ('i', 'INFO'),
     ('info', 'INFO'),
     ('w', 'WARNING'),

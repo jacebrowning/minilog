@@ -45,6 +45,7 @@ DEPENDENCIES := $(VENV)/.pipenv-$(shell bin/checksum Pipfile* setup.py)
 install: $(DEPENDENCIES)
 
 $(DEPENDENCIES):
+	pipenv run python setup.py develop
 	pipenv install --dev
 	@ touch $@
 
@@ -161,14 +162,11 @@ build: dist
 
 .PHONY: dist
 dist: install $(DIST_FILES)
-$(DIST_FILES): $(MODULES) README.rst CHANGELOG.rst
+$(DIST_FILES): $(MODULES)
 	rm -f $(DIST_FILES)
-	pipenv run python setup.py check --restructuredtext --strict --metadata
+	pipenv run python setup.py check --strict --metadata
 	pipenv run python setup.py sdist
 	pipenv run python setup.py bdist_wheel
-
-%.rst: %.md
-	pandoc -f markdown_github -t rst -o $@ $<
 
 .PHONY: exe
 exe: install $(EXE_FILES)
@@ -187,7 +185,7 @@ TWINE := pipenv run twine
 upload: dist ## Upload the current version to PyPI
 	git diff --name-only --exit-code
 	$(TWINE) upload dist/*.*
-	bin/open https://pypi.python.org/pypi/$(PROJECT)
+	bin/open https://pypi.org/project/$(PROJECT)
 
 # CLEANUP #####################################################################
 

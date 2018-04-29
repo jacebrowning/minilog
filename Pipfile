@@ -1,6 +1,6 @@
 [[source]]
 
-url = "https://pypi.python.org/simple"
+url = "https://pypi.org/simple"
 verify_ssl = true
 name = "pypi"
 
@@ -8,19 +8,14 @@ name = "pypi"
 
 python_version = "3"
 
-[packages]
-
-minilog = { path = ".", editable = true }
-
 [dev-packages]
 
 # Linters
-pylint = "~=1.7.5"
-astroid = "~=1.5.3" # temporary to work around apparent regression in 1.6
+pylint = "*"
 pycodestyle = "*"
 pydocstyle = "*"
 
-# # Testing
+# Testing
 pytest = "~= 3.3"
 pytest-describe = "*"
 pytest-expecter = "*"
@@ -28,8 +23,8 @@ pytest-random = "*"
 pytest-ordering = "*"
 pytest-cov = "*"
 
-# # Reports
-"coverage.space" = "*"
+# Reports
+coverage-space = "*"
 
 # Documentation
 mkdocs = "*"
@@ -41,9 +36,10 @@ wheel = "*"
 pyinstaller = "*"
 
 # Release
-twine = "*"
+setuptools = ">= 38.6.0"
+twine = ">= 1.11.0"
 
 # Tooling
 sniffer = "*"
-pync = {version = "< 2.0", sys_platform = "== 'darwin'"}
-MacFSEvents = {version = "*", sys_platform = "== 'darwin'"}
+pync = { version = "<2.0", sys_platform = "== 'darwin'" }
+MacFSEvents = { version = "*", sys_platform = "== 'darwin'" }

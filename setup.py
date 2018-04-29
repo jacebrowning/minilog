@@ -24,13 +24,9 @@ def read_package_variable(key, filename='__init__.py'):
 
 def build_description():
     """Build a description for the project from documentation files."""
-    try:
-        readme = open("README.rst").read()
-        changelog = open("CHANGELOG.rst").read()
-    except IOError:
-        return "<placeholder>"
-    else:
-        return readme + '\n' + changelog
+    readme = open("README.md").read()
+    changelog = open("CHANGELOG.md").read()
+    return readme + '\n' + changelog
 
 
 setuptools.setup(
@@ -45,6 +41,7 @@ setuptools.setup(
     packages=setuptools.find_packages(),
 
     long_description=build_description(),
+    long_description_content_type='text/markdown',
     license='MIT',
     classifiers=[
         'Development Status :: 4 - Beta',

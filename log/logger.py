@@ -1,5 +1,6 @@
 """Replicates some of the `logging.Logger` API."""
 
+import sys
 import logging
 
 from . import utils
@@ -29,5 +30,6 @@ def critical(message, *args, **kwargs):
     log(logging.CRITICAL, message, *args, **kwargs)
 
 
-def exception(*args, **kwargs):  # pylint: disable=unused-argument
-    raise NotImplementedError
+def exception(message, *args, **kwargs):
+    kwargs['exc_info'] = kwargs.get('exc_info', sys.exc_info())
+    log(logging.ERROR, message, *args, **kwargs)
