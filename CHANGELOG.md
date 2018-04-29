@@ -1,6 +1,6 @@
 # Revision History
 
-## 0.4 (unreleased)
+## 0.4 (2018/4/28)
 
 - Added `reset=True` as `init()` option to replace all existing logging handlers.
 - Added `exception` logging API.
