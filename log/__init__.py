@@ -13,4 +13,4 @@ c = critical
 exc = exception
 
 __project__ = 'minilog'
-__version__ = '0.4b1'
+__version__ = '0.4b2'

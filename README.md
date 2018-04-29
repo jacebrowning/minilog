@@ -1,8 +1,9 @@
 Unix: [![Unix Build Status](https://img.shields.io/travis/jacebrowning/minilog/develop.svg)](https://travis-ci.org/jacebrowning/minilog) Windows: [![Windows Build Status](https://img.shields.io/appveyor/ci/jacebrowning/minilog/develop.svg)](https://ci.appveyor.com/project/jacebrowning/minilog)<br>Metrics: [![Coverage Status](https://img.shields.io/coveralls/jacebrowning/minilog/develop.svg)](https://coveralls.io/r/jacebrowning/minilog) [![Scrutinizer Code Quality](https://img.shields.io/scrutinizer/g/jacebrowning/minilog.svg)](https://scrutinizer-ci.com/g/jacebrowning/minilog/?branch=develop)<br>Usage: [![PyPI Version](https://img.shields.io/pypi/v/minilog.svg)](https://pypi.python.org/pypi/minilog)
+Unix: [![Unix Build Status](https://img.shields.io/travis/jacebrowning/minilog/develop.svg)](https://travis-ci.org/jacebrowning/minilog) Windows: [![Windows Build Status](https://img.shields.io/appveyor/ci/jacebrowning/minilog/develop.svg)](https://ci.appveyor.com/project/jacebrowning/minilog)<br>Metrics: [![Coverage Status](https://img.shields.io/coveralls/jacebrowning/minilog/develop.svg)](https://coveralls.io/r/jacebrowning/minilog) [![Scrutinizer Code Quality](https://img.shields.io/scrutinizer/g/jacebrowning/minilog.svg)](https://scrutinizer-ci.com/g/jacebrowning/minilog/?branch=develop)<br>Usage: [![PyPI Version](https://img.shields.io/pypi/v/minilog.svg)](https://pypi.org/project/minilog)
 
 # Overview
 
-Every project should utilize logging, but sometimes the required boilerplate is too much. Instead of including this:
+Every project should utilize logging, but for simple use cases, this requires a bit too much boilerplate. Instead of including all of this in your modules:
 
 ```python
 import logging 
