@@ -1,5 +1,6 @@
 """Implements the "magic" to create `logging` records for the caller."""
 
+import sys
 import logging
 import inspect
 
@@ -7,7 +8,7 @@ from . import helpers
 
 
 def create_logger_record(level, message, *args, exc_info=None, **kwargs):
-    if not helpers.initialized:
+    if not helpers.initialized and 'pytest' not in sys.modules:
         helpers.init()
 
     frame, filename, lineno, *_ = inspect.stack()[3]
