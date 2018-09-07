@@ -29,14 +29,9 @@ Icon*
 *.gdraw
 
 # Testing and coverage results
-/.pytest_cache/
 /.coverage
 /.coverage.*
 /htmlcov/
-/xmlreport/
-/pyunit.xml
-/tmp/
-*.tmp
 
 # Build and release directories
 /build/

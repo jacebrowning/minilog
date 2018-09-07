@@ -16,7 +16,7 @@ pycodestyle = "*"
 pydocstyle = "*"
 
 # Testing
-pytest = "~=3.3"
+pytest = "~=3.7.0"
 pytest-describe = "*"
 pytest-expecter = "*"
 pytest-random = "*"
