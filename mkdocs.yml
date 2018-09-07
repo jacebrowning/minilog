@@ -5,7 +5,7 @@ repo_url: https://github.com/jacebrowning/minilog
 
 theme: readthedocs
 
-pages:
+nav:
 - Home: index.md
 - API: api.md
 - About:

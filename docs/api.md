@@ -9,18 +9,22 @@ log.warning(message, *args)
 log.error(message, *args)
 log.critical(message, *args)
 
+log.exception(message, *args)
+
 log.log(level, message, *args)
 ```
 
 As well as convenience methods:
 
 ```python
-log.warn(message, *args)  # WARNING
+log.warn(message, *args)  # warning
 
-log.d(message, *args)     # DEBUG
-log.i(message, *args)     # INFO
-log.w(message, *args)     # WARNING
-log.e(message, *args)     # ERROR
+log.d(message, *args)     # debug
+log.i(message, *args)     # info
+log.w(message, *args)     # warning
+log.e(message, *args)     # error
+
+log.exc(message, *args)   # exception
 ```
 
 # Configuration

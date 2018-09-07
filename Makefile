@@ -72,23 +72,18 @@ pydocstyle: install
 
 # TESTS #######################################################################
 
-PYTEST := pipenv run py.test
+PYTEST := pipenv run pytest
 COVERAGE := pipenv run coverage
 COVERAGE_SPACE := pipenv run coverage.space
 
 RANDOM_SEED ?= $(shell date +%s)
 FAILURES := .cache/v/cache/lastfailed
-REPORTS ?= xmlreport
 
-PYTEST_CORE_OPTIONS := -ra -vv
-PYTEST_COV_OPTIONS := --cov=$(PACKAGE) --no-cov-on-fail --cov-report=term-missing:skip-covered --cov-report=html
-PYTEST_RANDOM_OPTIONS := --random --random-seed=$(RANDOM_SEED)
-
-PYTEST_OPTIONS := $(PYTEST_CORE_OPTIONS) $(PYTEST_RANDOM_OPTIONS)
-ifndef DISABLE_COVERAGE
-PYTEST_OPTIONS += $(PYTEST_COV_OPTIONS)
+PYTEST_OPTIONS := --random --random-seed=$(RANDOM_SEED)
+ifdef DISABLE_COVERAGE
+PYTEST_OPTIONS += --no-cov --disable-warnings
 endif
-PYTEST_RERUN_OPTIONS := $(PYTEST_CORE_OPTIONS) --last-failed --exitfirst
+PYTEST_RERUN_OPTIONS := --last-failed --exitfirst
 
 .PHONY: test
 test: test-all ## Run unit and integration tests
@@ -96,22 +91,22 @@ test: test-all ## Run unit and integration tests
 .PHONY: test-unit
 test-unit: install
 	@ ( mv $(FAILURES) $(FAILURES).bak || true ) > /dev/null 2>&1
-	$(PYTEST) $(PYTEST_OPTIONS) $(PACKAGE) --junitxml=$(REPORTS)/unit.xml
+	$(PYTEST) $(PACKAGE) $(PYTEST_OPTIONS)
 	@ ( mv $(FAILURES).bak $(FAILURES) || true ) > /dev/null 2>&1
 	$(COVERAGE_SPACE) $(REPOSITORY) unit
 
 .PHONY: test-int
 test-int: install
-	@ if test -e $(FAILURES); then $(PYTEST) $(PYTEST_RERUN_OPTIONS) tests; fi
+	@ if test -e $(FAILURES); then $(PYTEST) tests $(PYTEST_RERUN_OPTIONS); fi
 	@ rm -rf $(FAILURES)
-	$(PYTEST) $(PYTEST_OPTIONS) tests --junitxml=$(REPORTS)/integration.xml
+	$(PYTEST) tests $(PYTEST_OPTIONS)
 	$(COVERAGE_SPACE) $(REPOSITORY) integration
 
 .PHONY: test-all
 test-all: install
-	@ if test -e $(FAILURES); then $(PYTEST) $(PYTEST_RERUN_OPTIONS) $(PACKAGES); fi
+	@ if test -e $(FAILURES); then $(PYTEST) $(PACKAGES) $(PYTEST_RERUN_OPTIONS); fi
 	@ rm -rf $(FAILURES)
-	$(PYTEST) $(PYTEST_OPTIONS) $(PACKAGES) --junitxml=$(REPORTS)/overall.xml
+	$(PYTEST) $(PACKAGES) $(PYTEST_OPTIONS)
 	$(COVERAGE_SPACE) $(REPOSITORY) overall
 
 .PHONY: read-coverage
@@ -156,10 +151,6 @@ PYINSTALLER_MAKESPEC := pipenv run pyi-makespec
 
 DIST_FILES := dist/*.tar.gz dist/*.whl
 EXE_FILES := dist/$(PROJECT).*
-
-.PHONY: build
-build: dist
-
 .PHONY: dist
 dist: install $(DIST_FILES)
 $(DIST_FILES): $(MODULES)
