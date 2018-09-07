@@ -16,7 +16,7 @@ pycodestyle = "*"
 pydocstyle = "*"
 
 # Testing
-pytest = "~= 3.3"
+pytest = "~=3.3"
 pytest-describe = "*"
 pytest-expecter = "*"
 pytest-random = "*"
@@ -36,8 +36,8 @@ wheel = "*"
 pyinstaller = "*"
 
 # Release
-setuptools = ">= 38.6.0"
-twine = ">= 1.11.0"
+setuptools = ">=38.6.0"
+twine = ">=1.11.0"
 
 # Tooling
 sniffer = "*"
