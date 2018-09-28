@@ -27,7 +27,7 @@ pytest-cov = "*"
 coverage-space = "*"
 
 # Documentation
-mkdocs = "*"
+mkdocs = "~=0.17.5"
 docutils = "*"
 pygments = "*"
 

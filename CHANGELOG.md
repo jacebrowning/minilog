@@ -1,5 +1,9 @@
 # Revision History
 
+## 1.0 (2018-09-27)
+
+- Initial stable release.
+
 ## 0.5 (2018-09-07)
 
 - Disabled automatic logging configuration when invoked by `pytest`.
