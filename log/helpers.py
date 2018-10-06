@@ -2,6 +2,8 @@
 
 import logging
 
+from . filters import RelativePathFilter
+
 
 DEFAULT_LEVEL = logging.INFO
 DEFAULT_FORMAT = "%(levelname)s: %(name)s: %(message)s"
@@ -24,6 +26,7 @@ def init(*, reset=False, debug=False, **kwargs):
     if custom_format:
         formatter = logging.Formatter(custom_format)
         for handler in logging.root.handlers:
+            handler.addFilter(RelativePathFilter())
             handler.setFormatter(formatter)
 
     global initialized

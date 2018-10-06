@@ -1,5 +1,9 @@
 # Revision History
 
+## 1.1 (unreleased)
+
+- Added `%(relpath)s` logging format.
+
 ## 1.0 (2018-09-27)
 
 - Initial stable release.

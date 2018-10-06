@@ -16,9 +16,10 @@ def describe_text():
 
     @pytest.mark.last
     def it_can_be_formatted_with_init(expect, caplog):
-        log.init(format=log.helpers.DEFAULT_FORMAT, level=log.WARNING)
+        log.init(format='%(relpath)s:%(lineno)s: %(message)s',
+                 level=log.WARNING)
         demo.greet("format")
-        expect(caplog.text) == "ERROR: tests.demo: Hello, format!\n"
+        expect(caplog.text) == "tests/demo.py:5: Hello, format!\n"
 
     def it_can_include_exceptions(expect, caplog):
         try:
@@ -26,7 +27,7 @@ def describe_text():
         except ZeroDivisionError:
             log.exception("exception")
         expect(caplog.text).contains('Traceback ')
-        expect(caplog.text).contains('test_records.py", line 25, ')
+        expect(caplog.text).contains('test_records.py", line 26, ')
         expect(caplog.text).contains('ZeroDivisionError')
 
 
