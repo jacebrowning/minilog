@@ -8,8 +8,11 @@ from . import helpers
 
 
 def create_logger_record(level, message, *args, exc_info=None, **kwargs):
-    if not helpers.initialized and 'pytest' not in sys.modules:
-        helpers.init()
+    if not helpers.initialized:
+        if 'pytest' in sys.modules:
+            helpers.add_custom_filters()
+        else:
+            helpers.init()
 
     frame, filename, lineno, *_ = inspect.stack()[3]
     module = inspect.getmodule(frame)

@@ -23,11 +23,20 @@ def init(*, reset=False, debug=False, **kwargs):
     kwargs['format'] = kwargs.get('format', DEFAULT_FORMAT)
     logging.basicConfig(**kwargs)
 
+    add_custom_filters()
+
     if custom_format:
         formatter = logging.Formatter(custom_format)
         for handler in logging.root.handlers:
-            handler.addFilter(RelativePathFilter())
             handler.setFormatter(formatter)
+
+    global initialized
+    initialized = True
+
+
+def add_custom_filters():
+    for handler in logging.root.handlers:
+        handler.addFilter(RelativePathFilter())
 
     global initialized
     initialized = True
