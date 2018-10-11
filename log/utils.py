@@ -18,6 +18,8 @@ def create_logger_record(level, message, *args, exc_info=None, **kwargs):
     if not logger.isEnabledFor(level):
         return
 
+    helpers.install_additional_formats(logger)
+
     record = logger.makeRecord(
         module.__name__,
         level,

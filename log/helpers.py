@@ -27,13 +27,13 @@ def init(*, reset=False, debug=False, **kwargs):
         for handler in logging.root.handlers:
             handler.setFormatter(formatter)
 
-    install_additional_formats()
+    install_additional_formats(logging.root)
 
     state.initialized = True
 
 
-def install_additional_formats():
-    for handler in logging.root.handlers:
+def install_additional_formats(logger):
+    for handler in logger.handlers:
         handler.addFilter(relpath_format_filter)
 
 
