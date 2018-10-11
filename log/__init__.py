@@ -1,7 +1,7 @@
 from logging import DEBUG, INFO, WARNING, ERROR
 
 from .logger import *  # pylint: disable=wildcard-import
-from .helpers import init, silence
+from .helpers import init, install_additional_formats, silence
 
 WARN = WARNING
 
@@ -13,4 +13,4 @@ c = critical
 exc = exception
 
 __project__ = 'minilog'
-__version__ = '1.1a2'
+__version__ = '1.1a3'
