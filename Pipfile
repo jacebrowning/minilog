@@ -22,6 +22,7 @@ pytest-expecter = "*"
 pytest-random = "*"
 pytest-ordering = "*"
 pytest-cov = "*"
+pathlib2 = "*"  # missing dependency for Python 3.5
 
 # Reports
 coverage-space = "*"
