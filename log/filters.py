@@ -3,7 +3,7 @@ import os
 import sys
 
 
-class RelativePathFilter(logging.Filter):
+class RelpathFormatFilter(logging.Filter):
     """Adds '%(relpath)s' as a 'LogRecord' attribute."""
 
     def filter(self, record):
@@ -17,3 +17,6 @@ class RelativePathFilter(logging.Filter):
                 record.relpath = os.path.relpath(pathname, path)
                 break
         return True
+
+
+relpath_format_filter = RelpathFormatFilter()

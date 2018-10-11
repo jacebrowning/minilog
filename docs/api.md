@@ -56,7 +56,7 @@ log.silence('selenium')
 log.silence('werkzeug', 'requests', allow_warning=True)
 ```
 
-# Relative Paths
+# Formatting
 
 In addition to the [standard](https://docs.python.org/3/library/logging.html#logrecord-attributes) `LogRecord` attributes, the following additional patterns are available:
 
@@ -64,3 +64,4 @@ In addition to the [standard](https://docs.python.org/3/library/logging.html#log
 | --- | --- |
 | `%(relpath)s` | Full pathname of the source file where the logging call was issued relative to the current working directory. |
 
+NOTE: `log.init()` is not called automatically when `pytest` is running code the code so `log.init_formats()` must be called manually from a fixture.

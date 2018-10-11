@@ -2,13 +2,12 @@
 
 import logging
 
-from . filters import RelativePathFilter
+from . filters import relpath_format_filter
+from . import state
 
 
 DEFAULT_LEVEL = logging.INFO
 DEFAULT_FORMAT = "%(levelname)s: %(name)s: %(message)s"
-
-initialized = False
 
 
 def init(*, reset=False, debug=False, **kwargs):
@@ -23,23 +22,19 @@ def init(*, reset=False, debug=False, **kwargs):
     kwargs['format'] = kwargs.get('format', DEFAULT_FORMAT)
     logging.basicConfig(**kwargs)
 
-    add_custom_filters()
-
     if custom_format:
         formatter = logging.Formatter(custom_format)
         for handler in logging.root.handlers:
             handler.setFormatter(formatter)
 
-    global initialized
-    initialized = True
+    init_formats()
+
+    state.initialized = True
 
 
-def add_custom_filters():
+def init_formats():
     for handler in logging.root.handlers:
-        handler.addFilter(RelativePathFilter())
-
-    global initialized
-    initialized = True
+        handler.addFilter(relpath_format_filter)
 
 
 def silence(*names, allow_info=False, allow_warning=False, allow_error=False):
