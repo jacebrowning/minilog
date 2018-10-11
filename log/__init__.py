@@ -1,7 +1,7 @@
 from logging import DEBUG, INFO, WARNING, ERROR
 
 from .logger import *  # pylint: disable=wildcard-import
-from .helpers import init, silence
+from .helpers import init, install_additional_formats, silence
 
 WARN = WARNING
 
