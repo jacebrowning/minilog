@@ -33,7 +33,6 @@ Set the format for all logging handlers:
 
 ```python
 log.init(format="%(levelname)s: %(name)s: %(message)s")
-
 ```
 
 Set the level for the root logging handler:
