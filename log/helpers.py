@@ -8,15 +8,26 @@ from . import state
 
 DEFAULT_LEVEL = logging.INFO
 DEFAULT_FORMAT = "%(levelname)s: %(name)s: %(message)s"
+VERBOSITY_TO_LEVEL = {
+    0: logging.ERROR,
+    1: logging.WARNING,
+    2: logging.INFO,
+    3: logging.DEBUG,
+}
 
 
-def init(*, reset=False, debug=False, **kwargs):
+def init(*, reset=False, debug=False, verbosity=None, **kwargs):
     if reset:
         for handler in logging.root.handlers[:]:
             logging.root.removeHandler(handler)
 
     custom_format = kwargs.get('format')
-    default_level = logging.DEBUG if debug else DEFAULT_LEVEL
+    if debug:
+        default_level = logging.DEBUG
+    elif verbosity is not None:
+        default_level = VERBOSITY_TO_LEVEL[verbosity]
+    else:
+        default_level = DEFAULT_LEVEL
 
     kwargs['level'] = kwargs.get('level', default_level)
     kwargs['format'] = kwargs.get('format', DEFAULT_FORMAT)

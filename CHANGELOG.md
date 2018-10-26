@@ -3,6 +3,7 @@
 ## 1.1 (unreleased)
 
 - Added `%(relpath)s` logging format.
+- Added `verbosity` as `init()` option to work with Django admin commands.
 
 ## 1.0 (2018-09-27)
 

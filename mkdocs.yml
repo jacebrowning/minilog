@@ -7,7 +7,8 @@ theme: readthedocs
 
 pages:
 - Home: index.md
-- API: api.md
+- Logging: logging.md
+- Extras: extras.md
 - About:
   - Release Notes: about/changelog.md
   - Contributing: about/contributing.md
