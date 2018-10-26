@@ -4,7 +4,6 @@ To customize logging formats and levels, `minilog` supports the same initializat
 
 ```python
 log.init(format="%(levelname)s: %(name)s: %(message)s")
-
 ```
 
 To set the level for the root logging handler:
