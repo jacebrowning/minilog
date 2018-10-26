@@ -4,11 +4,11 @@ import sys
 import logging
 import inspect
 
-from . import helpers
+from . import helpers, state
 
 
 def create_logger_record(level, message, *args, exc_info=None, **kwargs):
-    if not helpers.initialized and 'pytest' not in sys.modules:
+    if not state.initialized and 'pytest' not in sys.modules:
         helpers.init()
 
     frame, filename, lineno, *_ = inspect.stack()[3]
@@ -17,6 +17,8 @@ def create_logger_record(level, message, *args, exc_info=None, **kwargs):
     logger = logging.getLogger()
     if not logger.isEnabledFor(level):
         return
+
+    helpers.install_additional_formats(logger)
 
     record = logger.makeRecord(
         module.__name__,
