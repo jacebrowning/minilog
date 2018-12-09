@@ -1,8 +1,8 @@
 """Implements the "magic" to create `logging` records for the caller."""
 
-import sys
-import logging
 import inspect
+import logging
+import sys
 
 from . import helpers, state
 
