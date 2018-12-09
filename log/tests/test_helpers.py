@@ -1,6 +1,6 @@
 # pylint: disable=unused-variable,expression-not-assigned
 
-from unittest.mock import patch, call
+from unittest.mock import call, patch
 
 from log import helpers
 

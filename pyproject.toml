@@ -1,0 +1,69 @@
+[tool.poetry]
+
+name = "minilog"
+version = "0.0"
+description = "Sample project generated from jacebrowning/template-python."
+
+license = "MIT"
+
+authors = ["TemplateDemo <jacebrowning@gmail.com>"]
+
+readme = "README.md"
+packages = [
+    { include = "log" }
+]
+
+homepage = "https://coverage.space/client/"
+documentation = "https://cli.coverage.space"
+repository = "https://github.com/jacebrowning/coverage-space-cli"
+
+keywords = [
+]
+classifiers = [
+    # TODO: update this list to match your application: https://pypi.org/pypi?%3Aaction=list_classifiers
+    "Development Status :: 1 - Planning",
+    "Natural Language :: English",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.4",
+    "Programming Language :: Python :: 3.5",
+    "Programming Language :: Python :: 3.6",
+    "Programming Language :: Python :: 3.7",
+]
+
+[tool.poetry.dependencies]
+
+python = "^3.4"
+
+[tool.poetry.dev-dependencies]
+
+# Linters
+isort = "*"
+pylint = "^2.0"
+pycodestyle = "*"
+pydocstyle = "*"
+snowballstemmer = "*" # missing dependency for pydocstyle
+
+# Testing
+pytest = "^3.3"
+pytest-describe = "*"
+pytest-expecter = "*"
+pytest-random = "*"
+pytest-cov = "*"
+freezegun = "*"
+
+# Reports
+coveragespace = "*"
+
+# Documentation
+mkdocs = "^1.0"
+pygments = "*"
+
+# Build
+pyinstaller = "*"
+
+# Tooling
+sniffer = "*"
+MacFSEvents = { version = "*", platform = "darwin" }
+pync = { version = "*", platform = "darwin" }
