@@ -1,6 +1,6 @@
 # Revision History
 
-## 1.2 (unreleased)
+## 1.2 (2018-12-09)
 
 - Fixed bug where logger name is unset when logging during imports.
 

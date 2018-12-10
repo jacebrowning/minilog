@@ -1,4 +1,11 @@
-Unix: [![Unix Build Status](https://img.shields.io/travis/jacebrowning/minilog/develop.svg)](https://travis-ci.org/jacebrowning/minilog) Windows: [![Windows Build Status](https://img.shields.io/appveyor/ci/jacebrowning/minilog/develop.svg)](https://ci.appveyor.com/project/jacebrowning/minilog)<br>Metrics: [![Coverage Status](https://img.shields.io/coveralls/jacebrowning/minilog/develop.svg)](https://coveralls.io/r/jacebrowning/minilog) [![Scrutinizer Code Quality](https://img.shields.io/scrutinizer/g/jacebrowning/minilog.svg)](https://scrutinizer-ci.com/g/jacebrowning/minilog/?branch=develop)<br>Usage: [![PyPI Version](https://img.shields.io/pypi/v/minilog.svg)](https://pypi.org/project/minilog) [![PyPI License](https://img.shields.io/pypi/l/minilog.svg)](https://pypi.org/project/minilog) 
+[![Unix Build Status](https://img.shields.io/travis/jacebrowning/minilog/develop.svg?label=unix)](https://travis-ci.org/jacebrowning/minilog)
+[![Windows Build Status](https://img.shields.io/appveyor/ci/jacebrowning/minilog/develop.svg?label=windows)](https://ci.appveyor.com/project/jacebrowning/minilog)
+<br>
+[![Coverage Status](https://img.shields.io/coveralls/jacebrowning/minilog/develop.svg)](https://coveralls.io/r/jacebrowning/minilog)
+[![Scrutinizer Code Quality](https://img.shields.io/scrutinizer/g/jacebrowning/minilog.svg)](https://scrutinizer-ci.com/g/jacebrowning/minilog/?branch=develop)
+<br>
+[![PyPI Version](https://img.shields.io/pypi/v/minilog.svg)](https://pypi.org/project/minilog)
+[![PyPI License](https://img.shields.io/pypi/l/minilog.svg)](https://pypi.org/project/minilog) 
 
 # Overview
 
