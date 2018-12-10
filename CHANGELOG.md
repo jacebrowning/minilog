@@ -1,5 +1,9 @@
 # Revision History
 
+## 1.2 (2018-12-09)
+
+- Fixed bug where logger name is unset when logging during imports.
+
 ## 1.1 (2018-10-26)
 
 - Added `%(relpath)s` logging format.

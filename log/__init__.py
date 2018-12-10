@@ -11,6 +11,3 @@ w = warn = warning
 e = error
 c = critical
 exc = exception
-
-__project__ = 'minilog'
-__version__ = '1.1'

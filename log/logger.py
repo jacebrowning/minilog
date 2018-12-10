@@ -1,7 +1,7 @@
 """Replicates some of the `logging.Logger` API."""
 
-import sys
 import logging
+import sys
 
 from . import utils
 

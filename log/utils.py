@@ -1,8 +1,8 @@
 """Implements the "magic" to create `logging` records for the caller."""
 
-import sys
-import logging
 import inspect
+import logging
+import sys
 
 from . import helpers, state
 
@@ -14,7 +14,7 @@ def create_logger_record(level, message, *args, exc_info=None, **kwargs):
     frame, filename, lineno, *_ = inspect.stack()[3]
     module = inspect.getmodule(frame)
 
-    logger = logging.getLogger()
+    logger = logging.getLogger(module.__name__)
     if not logger.isEnabledFor(level):
         return
 

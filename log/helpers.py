@@ -2,9 +2,8 @@
 
 import logging
 
-from . filters import relpath_format_filter
 from . import state
-
+from .filters import relpath_format_filter
 
 DEFAULT_LEVEL = logging.INFO
 DEFAULT_FORMAT = "%(levelname)s: %(name)s: %(message)s"

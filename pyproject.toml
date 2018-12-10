@@ -1,0 +1,71 @@
+[tool.poetry]
+
+name = "minilog"
+version = "1.2"
+description = "Minimalistic wrapper for Python logging."
+
+license = "MIT"
+
+authors = ["Jace Browning <jacebrowning@gmail.com>"]
+
+readme = "README.md"
+packages = [
+    { include = "log" }
+]
+
+homepage = "https://pypi.org/project/minilog"
+documentation = "https://minilog.readthedocs.io"
+repository = "https://github.com/jacebrowning/minilog"
+
+keywords = ["logging"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Natural Language :: English",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.4",
+    "Programming Language :: Python :: 3.5",
+    "Programming Language :: Python :: 3.6",
+    "Programming Language :: Python :: 3.7",
+    "Programming Language :: Python",
+    "Topic :: Software Development",
+    "Topic :: System :: Logging",
+]
+
+[tool.poetry.dependencies]
+
+python = "^3.4"
+
+[tool.poetry.dev-dependencies]
+
+# Linters
+isort = "*"
+pylint = "^2.0"
+pycodestyle = "*"
+pydocstyle = "*"
+snowballstemmer = "*" # missing dependency for pydocstyle
+
+# Testing
+pytest = "^3.3"
+pytest-describe = "*"
+pytest-expecter = "*"
+pytest-random = "*"
+pytest-cov = "*"
+freezegun = "*"
+
+# Reports
+coveragespace = "*"
+
+# Documentation
+mkdocs = "^1.0"
+pygments = "*"
+
+# Build
+pyinstaller = "*"
+
+# Tooling
+sniffer = "*"
+MacFSEvents = { version = "*", platform = "darwin" }
+pync = { version = "*", platform = "darwin" }
