@@ -1,5 +1,9 @@
 # Revision History
 
+## 1.2.1 (2018-12-10)
+
+- Fixed missing `%(relpath)s` format for `pytest`.
+
 ## 1.2 (2018-12-09)
 
 - Fixed bug where logger name is unset when logging during imports.
