@@ -40,12 +40,13 @@ python = "^3.4"
 
 [tool.poetry.dev-dependencies]
 
+# Formatters
+black = { version="=18.9b0", python="^3.6" }
+isort = "=4.3.4"
+
 # Linters
-isort = "*"
 pylint = "^2.0"
-pycodestyle = "*"
 pydocstyle = "*"
-snowballstemmer = "*" # missing dependency for pydocstyle
 
 # Testing
 pytest = "^3.3"
@@ -62,10 +63,18 @@ coveragespace = "*"
 mkdocs = "^1.0"
 pygments = "*"
 
-# Build
-pyinstaller = "*"
-
 # Tooling
+pyinstaller = "*"
 sniffer = "*"
 MacFSEvents = { version = "*", platform = "darwin" }
 pync = { version = "*", platform = "darwin" }
+
+[tool.black]
+
+py36 = true
+skip-string-normalization = true
+
+[build-system]
+
+requires = ["poetry>=0.12"]
+build-backend = "poetry.masonry.api"
