@@ -1,3 +1,11 @@
+# 1.2.3 (unreleased)
+
+- Sped up logging by eliminating module lookup.
+
+# 1.2.2 (2019-01-08)
+
+- Sped up logging by eliminating source file loading.
+
 # 1.2.1 (2018-12-10)
 
 - Fixed missing `%(relpath)s` format for `pytest`.

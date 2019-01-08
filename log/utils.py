@@ -14,19 +14,19 @@ def create_logger_record(level, message, *args, exc_info=None, **kwargs):
     elif not state.initialized:
         helpers.init()
 
-    frame, filename, lineno, *_ = inspect.stack(0)[3]
+    frame = inspect.currentframe().f_back.f_back.f_back
 
-    module = inspect.getmodule(frame)
+    module_name = frame.f_globals['__name__']
 
-    logger = logging.getLogger(module.__name__)
+    logger = logging.getLogger(module_name)
     if not logger.isEnabledFor(level):
         return
 
     record = logger.makeRecord(
-        module.__name__,
+        module_name,
         level,
-        fn=filename,
-        lno=lineno,
+        fn=frame.f_globals['__file__'],
+        lno=frame.f_lineno,
         msg=message,
         args=args,
         exc_info=exc_info,
