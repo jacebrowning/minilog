@@ -54,6 +54,7 @@ pytest-describe = "*"
 pytest-expecter = "*"
 pytest-random = "*"
 pytest-cov = "*"
+pytest-profiling = "*"
 freezegun = "*"
 
 # Reports

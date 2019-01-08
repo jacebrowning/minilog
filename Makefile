@@ -105,6 +105,11 @@ test-all: install
 	poetry run pytest $(PACKAGES) $(PYTEST_OPTIONS)
 	poetry run coveragespace $(REPOSITORY) overall
 
+
+.PHONY: test-profile
+test-profile: install
+	poetry run pytest tests --profile-svg
+
 .PHONY: read-coverage
 read-coverage:
 	bin/open htmlcov/index.html
