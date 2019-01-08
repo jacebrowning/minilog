@@ -6,7 +6,6 @@ from log import helpers
 
 
 def describe_init():
-
     @patch('logging.basicConfig')
     def with_verbosity_0(config, expect):
         helpers.init(format='%(message)s', verbosity=0)

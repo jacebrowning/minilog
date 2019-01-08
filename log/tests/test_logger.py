@@ -6,7 +6,6 @@ from log import logger
 
 
 def describe_log():
-
     def it_sets_level_and_message(expect, caplog):
         logger.log(logging.DEBUG, "foobar")
         expect(caplog.records[-1].levelname) == 'DEBUG'
