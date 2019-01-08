@@ -25,7 +25,6 @@ classifiers = [
     "Natural Language :: English",
     "Operating System :: OS Independent",
     "Programming Language :: Python :: 3",
-    "Programming Language :: Python :: 3.4",
     "Programming Language :: Python :: 3.5",
     "Programming Language :: Python :: 3.6",
     "Programming Language :: Python :: 3.7",
@@ -36,7 +35,7 @@ classifiers = [
 
 [tool.poetry.dependencies]
 
-python = "^3.4"
+python = "^3.5"
 
 [tool.poetry.dev-dependencies]
 
@@ -47,6 +46,7 @@ isort = "=4.3.4"
 # Linters
 pylint = "^2.0"
 pydocstyle = "*"
+mypy = "*"
 
 # Testing
 pytest = "^3.3"
