@@ -1,4 +1,4 @@
-# 1.2.3 (unreleased)
+# 1.2.3 (2019-01-08)
 
 - Sped up logging by eliminating module lookup.
 
