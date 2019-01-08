@@ -14,7 +14,8 @@ def create_logger_record(level, message, *args, exc_info=None, **kwargs):
     elif not state.initialized:
         helpers.init()
 
-    frame, filename, lineno, *_ = inspect.stack()[3]
+    frame, filename, lineno, *_ = inspect.stack(0)[3]
+
     module = inspect.getmodule(frame)
 
     logger = logging.getLogger(module.__name__)
