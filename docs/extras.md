@@ -30,7 +30,7 @@ log.init(format=<…>, verbosity=verbosity)
 
 ### Silencing Loggers
 
-To set the logging level for specific named loggers:
+To hide logging for specific named loggers:
 
 ```python
 log.silence('selenium')
