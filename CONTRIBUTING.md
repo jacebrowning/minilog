@@ -3,16 +3,19 @@
 ## Requirements
 
 * Make:
-    * Windows: http://mingw.org/download/installer
-    * Mac: http://developer.apple.com/xcode
-    * Linux: http://www.gnu.org/software/make
+    * macOS: `$ xcode-select --install`
+    * Linux: [https://www.gnu.org/software/make](https://www.gnu.org/software/make)
+    * Windows: [https://mingw.org/download/installer](https://mingw.org/download/installer)
 * Python: `$ pyenv install`
-* Poetry: https://poetry.eustace.io/docs/#installation
-* Graphviz: http://www.graphviz.org/Download.php
+* Poetry: [https://poetry.eustace.io/docs/#installation](https://poetry.eustace.io/docs/#installation)
+* Graphviz:
+    * macOS: `$ brew install graphviz`
+    * Linux: [https://graphviz.org/download](https://graphviz.org/download/)
+    * Windows: [https://graphviz.org/download](https://graphviz.org/download/)
 
 To confirm these system dependencies are configured correctly:
 
-```sh
+```text
 $ make doctor
 ```
 
@@ -20,7 +23,7 @@ $ make doctor
 
 Install project dependencies into a virtual environment:
 
-```sh
+```text
 $ make install
 ```
 
@@ -30,19 +33,19 @@ $ make install
 
 Run the tests:
 
-```sh
+```text
 $ make test
 ```
 
 Run static analysis:
 
-```sh
+```text
 $ make check
 ```
 
 Build the documentation:
 
-```sh
+```text
 $ make docs
 ```
 
@@ -50,7 +53,7 @@ $ make docs
 
 Keep all of the above tasks running on change:
 
-```sh
+```text
 $ make watch
 ```
 
@@ -60,7 +63,7 @@ $ make watch
 
 The CI server will report overall build status:
 
-```sh
+```text
 $ make ci
 ```
 
@@ -68,6 +71,6 @@ $ make ci
 
 Release to PyPI:
 
-```sh
+```text
 $ make upload
 ```
