@@ -33,7 +33,11 @@ def init(*, reset=False, debug=False, verbosity=None, **kwargs):
     logging.basicConfig(**kwargs)
 
     if custom_format:
-        formatter = logging.Formatter(custom_format)
+        formatter = logging.Formatter(
+            fmt=custom_format,
+            datefmt=kwargs.get('datefmt'),
+            style=kwargs.get('style', '%'),
+        )
         for handler in logging.root.handlers:
             handler.setFormatter(formatter)
 
