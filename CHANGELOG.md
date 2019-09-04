@@ -1,3 +1,7 @@
+# 1.2.4 (2019-09-04)
+
+- Fixed `init()` to pass all arguments to `logging.Formatter`.
+
 # 1.2.3 (2019-01-08)
 
 - Sped up logging by eliminating module lookup.
