@@ -41,7 +41,7 @@ DEPENDENCIES := $(VIRTUAL_ENV)/.poetry-$(shell bin/checksum pyproject.toml poetr
 install: $(DEPENDENCIES) .cache
 
 $(DEPENDENCIES): poetry.lock
-	@ poetry config settings.virtualenvs.in-project true
+	@ poetry config settings.virtualenvs.in-project true || poetry config virtualenvs.in-project true
 	poetry install
 	@ touch $@
 
@@ -57,8 +57,7 @@ poetry.lock: pyproject.toml
 .PHONY: format
 format: install
 	poetry run isort $(PACKAGES) --recursive --apply
-	# TODO: Require 'black' after Python 3.6+
-	- poetry run black $(PACKAGES)
+	poetry run black $(PACKAGES)
 	@ echo
 
 .PHONY: check
@@ -66,8 +65,9 @@ check: install format  ## Run formaters, linters, and static analysis
 ifdef CI
 	git diff --exit-code
 endif
-	poetry run pylint $(PACKAGES) --rcfile=.pylint.ini
+	# TODO: Enable type checking
 	# poetry run mypy $(PACKAGES) --config-file=.mypy.ini
+	poetry run pylint $(PACKAGES) --rcfile=.pylint.ini
 	poetry run pydocstyle $(PACKAGES) $(CONFIG)
 
 # TESTS #######################################################################
