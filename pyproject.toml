@@ -19,13 +19,12 @@ repository = "https://github.com/jacebrowning/minilog"
 
 keywords = ["logging"]
 classifiers = [
-    "Development Status :: 4 - Beta",
+    "Development Status :: 5 - Production/Stable",
     "Intended Audience :: Developers",
     "License :: OSI Approved :: MIT License",
     "Natural Language :: English",
     "Operating System :: OS Independent",
     "Programming Language :: Python :: 3",
-    "Programming Language :: Python :: 3.5",
     "Programming Language :: Python :: 3.6",
     "Programming Language :: Python :: 3.7",
     "Programming Language :: Python",
@@ -35,12 +34,12 @@ classifiers = [
 
 [tool.poetry.dependencies]
 
-python = "^3.5"
+python = "^3.6"
 
 [tool.poetry.dev-dependencies]
 
 # Formatters
-black = { version="=18.9b0", python="^3.6" }
+black = "=18.9b0"
 isort = "=4.3.4"
 
 # Linters

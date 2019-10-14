@@ -19,24 +19,20 @@ def describe_text():
         ) == "demo.py                      5 ERROR    Hello, caller!\n"
 
     @pytest.mark.last
-    @freeze_time('2019-09-04 12:34:56')
+    @freeze_time('2019-01-15')
     def it_can_be_formatted_with_init(expect, caplog):
         log.init(
             level=log.WARNING,
             format='%(asctime)s %(relpath)s:%(lineno)s: %(message)s',
-            datefmt='%Y-%m-%d %H:%M:%S',
+            datefmt='%Y-%m',
         )
 
         demo.greet("format")
 
         if os.name == 'nt':
-            expect(
-                caplog.text
-            ) == "2019-09-04 08:34:56 tests\\demo.py:5: Hello, format!\n"
+            expect(caplog.text) == "2019-01 tests\\demo.py:5: Hello, format!\n"
         else:
-            expect(
-                caplog.text
-            ) == "2019-09-04 08:34:56 tests/demo.py:5: Hello, format!\n"
+            expect(caplog.text) == "2019-01 tests/demo.py:5: Hello, format!\n"
 
     def it_can_include_exceptions(expect, caplog):
         try:
@@ -45,7 +41,7 @@ def describe_text():
             log.exception("exception")
 
         expect(caplog.text).contains('Traceback ')
-        expect(caplog.text).contains('test_records.py", line 43, ')
+        expect(caplog.text).contains('test_records.py", line 39, ')
         expect(caplog.text).contains('ZeroDivisionError')
 
 
