@@ -14,7 +14,7 @@ def create_logger_record(level, message, *args, exc_info=None, **kwargs):
     elif not state.initialized:
         helpers.init()
 
-    frame = inspect.currentframe().f_back.f_back.f_back
+    frame = inspect.currentframe().f_back.f_back.f_back  # type: ignore
 
     module_name = frame.f_globals['__name__']
 
