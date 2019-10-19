@@ -17,7 +17,7 @@ VIRTUAL_ENV ?= .venv
 all: install
 
 .PHONY: ci
-ci: format check test mkdocs ## Run all tasks that determine CI status
+ci: format check test-repeat mkdocs ## Run all tasks that determine CI status
 
 .PHONY: watch
 watch: install .clean-test ## Continuously run all CI tasks when files chanage
@@ -104,6 +104,10 @@ test-all: install
 	poetry run pytest $(PACKAGES) $(PYTEST_OPTIONS)
 	poetry run coveragespace $(REPOSITORY) overall
 
+.PHONY: test-repeat
+test-repeat: install
+	@ rm -rf $(FAILURES)
+	poetry run pytest $(PACKAGES) $(PYTEST_OPTIONS) --count=5 --exitfirst
 
 .PHONY: test-profile
 test-profile: install

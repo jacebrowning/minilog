@@ -2,6 +2,10 @@
 
 import logging
 
+import pytest
+
+import log
+
 
 def pytest_configure(config):
     """Disable verbose output when running tests."""
@@ -20,3 +24,8 @@ def pytest_configure(config):
             self.showfspath = False
 
     terminal.TerminalReporter = QuietReporter
+
+
+@pytest.fixture(autouse=True)
+def reset_state():
+    log.state.default_level = None  # type: ignore

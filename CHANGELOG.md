@@ -1,3 +1,7 @@
+# 1.2.5 (2019-10-19)
+
+- Fixed logging levels to use the default level for new loggers.
+
 # 1.2.4 (2019-09-04)
 
 - Fixed `init()` to pass all arguments to `logging.Formatter`.

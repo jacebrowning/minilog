@@ -7,7 +7,7 @@ import sys
 from . import helpers, state
 
 
-def create_logger_record(level, message, *args, exc_info=None, **kwargs):
+def create_logger_record(level, message, *args, exc_info=None, **kwargs) -> bool:
     if 'pytest' in sys.modules:
         root = logging.getLogger()
         helpers.install_additional_formats(root)
@@ -16,11 +16,13 @@ def create_logger_record(level, message, *args, exc_info=None, **kwargs):
 
     frame = inspect.currentframe().f_back.f_back.f_back  # type: ignore
 
-    module_name = frame.f_globals['__name__']
+    module_name = kwargs.pop('module_name', frame.f_globals['__name__'])
 
     logger = logging.getLogger(module_name)
+    if not logger.level:
+        logger.level = state.default_level
     if not logger.isEnabledFor(level):
-        return
+        return False
 
     record = logger.makeRecord(
         module_name,
@@ -34,3 +36,4 @@ def create_logger_record(level, message, *args, exc_info=None, **kwargs):
         sinfo=None,
     )
     logger.handle(record)
+    return True

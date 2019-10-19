@@ -5,8 +5,6 @@ import logging
 from . import state
 from .filters import relpath_format_filter
 
-DEFAULT_LEVEL = logging.INFO
-DEFAULT_FORMAT = "%(levelname)s: %(name)s: %(message)s"
 VERBOSITY_TO_LEVEL = {
     0: logging.ERROR,
     1: logging.WARNING,
@@ -22,14 +20,12 @@ def init(*, reset=False, debug=False, verbosity=None, **kwargs):
 
     custom_format = kwargs.get('format')
     if debug:
-        default_level = logging.DEBUG
+        state.default_level = logging.DEBUG
     elif verbosity is not None:
-        default_level = VERBOSITY_TO_LEVEL[verbosity]
-    else:
-        default_level = DEFAULT_LEVEL
+        state.default_level = VERBOSITY_TO_LEVEL[verbosity]
 
-    kwargs['level'] = kwargs.get('level', default_level)
-    kwargs['format'] = kwargs.get('format', DEFAULT_FORMAT)
+    kwargs['level'] = kwargs.get('level', state.default_level)
+    kwargs['format'] = kwargs.get('format', state.default_format)
     logging.basicConfig(**kwargs)
 
     if custom_format:
