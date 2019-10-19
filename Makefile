@@ -19,7 +19,7 @@ SNIFFER := poetry run sniffer
 all: install
 
 .PHONY: ci
-ci: check test ## Run all tasks that determine CI status
+ci: check test-repeat ## Run all tasks that determine CI status
 
 .PHONY: watch
 watch: install .clean-test ## Continuously run all CI tasks when files chanage
@@ -43,7 +43,7 @@ DEPENDENCIES := $(VIRTUAL_ENV)/.poetry-$(shell bin/checksum pyproject.toml poetr
 install: $(DEPENDENCIES)
 
 $(DEPENDENCIES):
-	@ poetry config settings.virtualenvs.in-project true
+	@ poetry config settings.virtualenvs.in-project true || poetry config virtualenvs.in-project true
 	poetry install
 	@ touch $@
 
@@ -111,6 +111,11 @@ test-all: install
 	@ rm -rf $(FAILURES)
 	$(PYTEST) $(PACKAGES) $(PYTEST_OPTIONS)
 	$(COVERAGE_SPACE) $(REPOSITORY) overall
+
+.PHONY: test-repeat
+test-repeat: install
+	@ rm -rf $(FAILURES)
+	$(PYTEST) $(PACKAGES) $(PYTEST_OPTIONS) --count=5 --exitfirst
 
 .PHONY: read-coverage
 read-coverage:

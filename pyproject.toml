@@ -1,7 +1,7 @@
 [tool.poetry]
 
 name = "minilog"
-version = "1.2.4"
+version = "1.2.5"
 description = "Minimalistic wrapper for Python logging."
 
 license = "MIT"
@@ -51,6 +51,7 @@ snowballstemmer = "*" # missing dependency for pydocstyle
 pytest = "^3.3"
 pytest-describe = "*"
 pytest-expecter = "*"
+pytest-repeat = "*"
 pytest-random = "*"
 pytest-cov = "*"
 freezegun = "*"
