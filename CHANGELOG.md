@@ -1,3 +1,7 @@
+# 1.2.6 (2019-11-14)
+
+- Fixed new loggers to inherit logging level from their parent.
+
 # 1.2.5 (2019-10-19)
 
 - Fixed logging levels to use the default level for new loggers.

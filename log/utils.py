@@ -17,10 +17,15 @@ def create_logger_record(level, message, *args, exc_info=None, **kwargs):
     frame = inspect.currentframe().f_back.f_back.f_back
 
     module_name = kwargs.pop('module_name', frame.f_globals['__name__'])
+    parent_module_name = module_name.split('.')[0]
 
     logger = logging.getLogger(module_name)
     if not logger.level:
+        parent_logger = logging.getLogger(parent_module_name)
+        logger.level = parent_logger.level
+    if not logger.level:
         logger.level = state.default_level
+
     if not logger.isEnabledFor(level):
         return False
 
