@@ -14,7 +14,7 @@ def pytest_configure(config):
     terminal = config.pluginmanager.getplugin('terminal')
     base = terminal.TerminalReporter
 
-    class QuietReporter(base):
+    class QuietReporter(base):  # type: ignore
         """Reporter that only shows dots when running tests."""
 
         def __init__(self, *args, **kwargs):
@@ -28,4 +28,4 @@ def pytest_configure(config):
 
 @pytest.fixture(autouse=True)
 def reset_state():
-    log.state.default_level = None
+    log.state.default_level = None  # type: ignore

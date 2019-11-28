@@ -7,14 +7,14 @@ import sys
 from . import helpers, state
 
 
-def create_logger_record(level, message, *args, exc_info=None, **kwargs):
+def create_logger_record(level, message, *args, exc_info=None, **kwargs) -> bool:
     if 'pytest' in sys.modules:
         root = logging.getLogger()
         helpers.install_additional_formats(root)
     elif not state.initialized:
         helpers.init()
 
-    frame = inspect.currentframe().f_back.f_back.f_back
+    frame = inspect.currentframe().f_back.f_back.f_back  # type: ignore
 
     module_name = kwargs.pop('module_name', frame.f_globals['__name__'])
     parent_module_name = module_name.split('.')[0]

@@ -9,7 +9,7 @@ class RelpathFormatFilter(logging.Filter):
     def filter(self, record):
         pathname = record.pathname
         record.relpath = None
-        abs_sys_paths = map(os.path.abspath, sys.path)
+        abs_sys_paths = [os.path.abspath(p) for p in sys.path]
         for path in sorted(abs_sys_paths, key=len, reverse=True):
             if not path.endswith(os.sep):
                 path += os.sep

@@ -1,3 +1,7 @@
+# 1.3 (2019-11-27)
+
+- Added support for Python 3.8.
+
 # 1.2.6 (2019-11-14)
 
 - Fixed new loggers to inherit logging level from their parent.

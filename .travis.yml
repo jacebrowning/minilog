@@ -1,13 +1,10 @@
+dist: xenial
+
 language: python
 python:
-  - 3.4
-  - 3.5
   - 3.6
-matrix:
-  include:
-    - python: 3.7
-      dist: xenial
-      sudo: true
+  - 3.7
+  - 3.8
 
 cache:
   pip: true
@@ -16,6 +13,7 @@ cache:
 
 env:
   global:
+    - POETRY_PREVIEW=1
     - RANDOM_SEED=0
 
 before_install:

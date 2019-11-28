@@ -9,7 +9,7 @@ log.init(format="%(levelname)s: %(name)s: %(message)s")
 To set the level for the root logging handler:
 
 ```python
-log.init(format=<…>, level=log.WARNING)
+log.init(format=…, level=log.WARNING)
 ```
 
 ### Debug Option
@@ -17,7 +17,7 @@ log.init(format=<…>, level=log.WARNING)
 To simply enable debug-level logging, a convenience option is provided:
 
 ```python
-log.init(format=<…>, debug=True)
+log.init(format=…, debug=True)
 ```
 
 ### Verbosity Option
@@ -25,12 +25,12 @@ log.init(format=<…>, debug=True)
 To work with frameworks that provide a `verbosity` level in their CLI frameworks (such as [Django](https://docs.djangoproject.com/en/2.1/ref/django-admin/#cmdoption-verbosity)), that can be used instead:
 
 ```python
-log.init(format=<…>, verbosity=verbosity)
+log.init(format=…, verbosity=verbosity)
 ```
 
 ### Silencing Loggers
 
-To set the logging level for specific named loggers:
+To hide logging for specific named loggers:
 
 ```python
 log.silence('selenium')
