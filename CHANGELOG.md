@@ -1,4 +1,4 @@
-# 1.2 (unreleased)
+# 1.3 (2019-11-27)
 
 - Added support for Python 3.8.
 
