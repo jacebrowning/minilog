@@ -4,8 +4,9 @@ import logging
 import warnings
 from importlib import reload
 
-from . import state
-from .filters import relpath_format_filter
+from . import filters, state
+
+__all__ = ['reset', 'init', 'silence']
 
 VERBOSITY_TO_LEVEL = {
     0: logging.ERROR,
@@ -52,14 +53,9 @@ def init(*, debug=False, verbosity=None, **kwargs):
         for handler in logging.root.handlers:
             handler.setFormatter(formatter)
 
-    install_additional_formats(logging.root)
+    filters.install(logging.root)
 
     state.initialized = True
-
-
-def install_additional_formats(logger):
-    for handler in logger.handlers:
-        handler.addFilter(relpath_format_filter)
 
 
 def silence(*names, allow_info=False, allow_warning=False, allow_error=False):
