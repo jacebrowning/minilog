@@ -14,9 +14,7 @@ def describe_text():
     def it_includes_the_caller_location(expect, caplog):
         demo.greet("caller")
 
-        expect(
-            caplog.text
-        ) == "demo.py                      5 ERROR    Hello, caller!\n"
+        expect(caplog.text) == "ERROR    tests.demo:demo.py:5 Hello, caller!\n"
 
     @pytest.mark.last
     @freeze_time('2019-01-15')
@@ -41,7 +39,7 @@ def describe_text():
             log.exception("exception")
 
         expect(caplog.text).contains('Traceback ')
-        expect(caplog.text).contains('test_records.py", line 39, ')
+        expect(caplog.text).contains('test_records.py", line 37, ')
         expect(caplog.text).contains('ZeroDivisionError')
 
 
