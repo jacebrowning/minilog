@@ -4,13 +4,13 @@ import inspect
 import logging
 import sys
 
-from . import helpers, state
+from . import filters, helpers, state
 
 
 def create_logger_record(level, message, *args, exc_info=None, **kwargs) -> bool:
     if 'pytest' in sys.modules:
         root = logging.getLogger()
-        helpers.install_additional_formats(root)
+        filters.install(root)
     elif not state.initialized:
         helpers.init()
 
