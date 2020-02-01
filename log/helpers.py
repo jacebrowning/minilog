@@ -1,6 +1,8 @@
 """Wrappers to eliminate boilerplate `logging` activities."""
 
 import logging
+import warnings
+from importlib import reload
 
 from . import state
 from .filters import relpath_format_filter
@@ -13,10 +15,23 @@ VERBOSITY_TO_LEVEL = {
 }
 
 
-def init(*, reset=False, debug=False, verbosity=None, **kwargs):
-    if reset:
-        for handler in logging.root.handlers[:]:
-            logging.root.removeHandler(handler)
+def reset():
+    logging.shutdown()
+    reload(logging)
+
+
+def init(*, debug=False, verbosity=None, **kwargs):
+    if 'reset' in kwargs:  # pragma: no cover
+        warnings.warn(
+            (
+                "'reset' option will be removed in the next major version."
+                " Use 'log.reset()' instead."
+            ),
+            DeprecationWarning,
+        )
+        should_reset = kwargs.pop('reset')
+        if should_reset:
+            reset()
 
     custom_format = kwargs.get('format')
     if debug:
