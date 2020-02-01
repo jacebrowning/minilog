@@ -40,8 +40,8 @@ python = "^3.6"
 [tool.poetry.dev-dependencies]
 
 # Formatters
-black = "=18.9b0"
-isort = "=4.3.4"
+black = "=19.10b0"
+isort = "=4.3.21"
 
 # Linters
 pylint = "^2.0"
@@ -49,7 +49,7 @@ pydocstyle = "*"
 mypy = "*"
 
 # Testing
-pytest = "^3.3"
+pytest = "^5.3"
 pytest-describe = "*"
 pytest-expecter = "*"
 pytest-repeat = "*"
@@ -59,7 +59,7 @@ pytest-profiling = "*"
 freezegun = "*"
 
 # Reports
-coveragespace = "*"
+coveragespace = "^3.1.1"
 
 # Documentation
 mkdocs = "^1.0"
@@ -73,7 +73,7 @@ pync = { version = "*", platform = "darwin" }
 
 [tool.black]
 
-py36 = true
+target-version = ["py36", "py37"]
 skip-string-normalization = true
 
 [build-system]
