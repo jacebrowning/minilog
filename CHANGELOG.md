@@ -1,4 +1,4 @@
-# 1.4 (unrelased)
+# 1.4 (2020-02-15)
 
 - Deprecated `reset=True` option for `log.init()` in favor of a separate `log.reset()` function.
 
