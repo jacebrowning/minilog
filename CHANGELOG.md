@@ -1,3 +1,7 @@
+# 1.4 (2020-02-15)
+
+- Deprecated `reset=True` option for `log.init()` in favor of a separate `log.reset()` function.
+
 # 1.3 (2019-11-27)
 
 - Added support for Python 3.8.
@@ -70,4 +74,4 @@
 
 # 0.1 (2018-03-03)
 
- - Initial release.
+- Initial release.

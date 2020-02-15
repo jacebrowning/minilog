@@ -5,6 +5,8 @@ import sys
 
 from . import utils
 
+__all__ = ['log', 'debug', 'info', 'warning', 'error', 'critical', 'exception']
+
 
 def log(level, message, *args, **kwargs):
     utils.create_logger_record(level, message, *args, **kwargs)

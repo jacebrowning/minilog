@@ -42,13 +42,14 @@ log.silence('werkzeug', 'requests', allow_warning=True)
 Finally, if another package has already set the logging format or level, that can be reset so that `minilog` takes over:
 
 ```python
-log.init(…, reset=True)
+log.reset()
+log.init(…)
 ```
 
 # Records
 
 In addition to the standard [`LogRecord`](https://docs.python.org/3/library/logging.html#logrecord-attributes) attributes, the following additional patterns are available:
 
-| Logging Format  | Description
-| --- | --- |
-| `%(relpath)s` | Full pathname of the source file where the logging call was issued relative to the current working directory. |
+| Logging Format | Description                                                                                                   |
+| -------------- | ------------------------------------------------------------------------------------------------------------- |
+| `%(relpath)s`  | Full pathname of the source file where the logging call was issued relative to the current working directory. |

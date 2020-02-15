@@ -20,3 +20,8 @@ class RelpathFormatFilter(logging.Filter):
 
 
 relpath_format_filter = RelpathFormatFilter()
+
+
+def install(logger):
+    for handler in logger.handlers:
+        handler.addFilter(relpath_format_filter)
