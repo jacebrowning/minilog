@@ -5,6 +5,7 @@ import sys
 
 from . import utils
 
+
 __all__ = ['log', 'debug', 'info', 'warning', 'error', 'critical', 'exception']
 
 
