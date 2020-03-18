@@ -28,6 +28,13 @@ To work with frameworks that provide a `verbosity` level in their CLI frameworks
 log.init(format=…, verbosity=verbosity)
 ```
 
+| Verbosity | Level       |
+|-----------|-------------|
+| `0`       | **ERROR**   |
+| `1`       | **WARNING** |
+| `2`       | **INFO**    |
+| `3`       | **DEBUG**   |
+
 ### Silencing Loggers
 
 To hide logging for specific named loggers:
@@ -51,5 +58,5 @@ log.init(…)
 In addition to the standard [`LogRecord`](https://docs.python.org/3/library/logging.html#logrecord-attributes) attributes, the following additional patterns are available:
 
 | Logging Format | Description                                                                                                   |
-| -------------- | ------------------------------------------------------------------------------------------------------------- |
+|----------------|---------------------------------------------------------------------------------------------------------------|
 | `%(relpath)s`  | Full pathname of the source file where the logging call was issued relative to the current working directory. |

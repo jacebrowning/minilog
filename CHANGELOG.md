@@ -1,3 +1,7 @@
+# 1.5 (unreleased)
+
+- Fixed `init()` to handle invalid `verbosity` levels and default to **DEBUG**.
+
 # 1.4 (2020-02-15)
 
 - Deprecated `reset=True` option for `log.init()` in favor of a separate `log.reset()` function.
