@@ -27,6 +27,11 @@ def describe_init():
         expect(config.mock_calls) == [call(format='%(message)s', level=10)]
 
     @patch('logging.basicConfig')
+    def with_verbosity_above_3(config, expect):
+        helpers.init(format='%(message)s', verbosity=4)
+        expect(config.mock_calls) == [call(format='%(message)s', level=10)]
+
+    @patch('logging.basicConfig')
     def with_verbosity_0_and_debug(config, expect):
         helpers.init(format='%(message)s', verbosity=0, debug=True)
         expect(config.mock_calls) == [call(format='%(message)s', level=10)]

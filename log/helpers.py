@@ -39,7 +39,10 @@ def init(*, debug=False, verbosity=None, **kwargs):
     if debug:
         state.default_level = logging.DEBUG
     elif verbosity is not None:
-        state.default_level = VERBOSITY_TO_LEVEL[verbosity]
+        try:
+            state.default_level = VERBOSITY_TO_LEVEL[verbosity]
+        except KeyError:
+            state.default_level = logging.DEBUG
 
     kwargs['level'] = kwargs.get('level', state.default_level)
     kwargs['format'] = kwargs.get('format', state.default_format)
