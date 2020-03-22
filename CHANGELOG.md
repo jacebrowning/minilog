@@ -2,6 +2,10 @@
 
 - Fixed `init()` to handle invalid `verbosity` levels and default to **DEBUG**.
 
+# 1.4.1 (2020-03-22)
+
+- Fixed new loggers to inherit the root logging level when their parent has none set.
+
 # 1.4 (2020-02-15)
 
 - Deprecated `reset=True` option for `log.init()` in favor of a separate `log.reset()` function.
