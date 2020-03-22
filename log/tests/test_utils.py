@@ -2,12 +2,12 @@
 
 import logging
 
-from log import state, utils
+from log import utils
 
 
 def describe_create_logger_record():
-    def it_uses_the_default_log_level_for_new_loggers(expect):
-        state.default_level = logging.INFO
+    def it_uses_the_default_log_level_for_new_loggers(expect, monkeypatch):
+        monkeypatch.setattr(logging.root, 'level', logging.INFO)
 
         expect(
             utils.create_logger_record(logging.DEBUG, 'hello', module_name='new_module')
@@ -24,8 +24,6 @@ def describe_create_logger_record():
         ) == True
 
     def it_inherits_the_parent_logging_level(expect):
-        state.default_level = logging.INFO
-
         logger = logging.getLogger('parent_module')
         logger.level = logging.WARNING
 
