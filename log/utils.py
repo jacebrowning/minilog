@@ -9,13 +9,12 @@ from . import filters, helpers, state
 
 def create_logger_record(level, message, *args, exc_info=None, **kwargs) -> bool:
     if 'pytest' in sys.modules:
-        root = logging.getLogger()
-        filters.install(root)
+        filters.install(logging.root)
     elif not state.initialized:
         helpers.init()
 
     frame = inspect.currentframe().f_back.f_back.f_back  # type: ignore
-
+    assert frame
     module_name = kwargs.pop('module_name', frame.f_globals['__name__'])
     parent_module_name = module_name.split('.')[0]
 
@@ -24,7 +23,7 @@ def create_logger_record(level, message, *args, exc_info=None, **kwargs) -> bool
         parent_logger = logging.getLogger(parent_module_name)
         logger.level = parent_logger.level
     if not logger.level:
-        logger.level = state.default_level
+        logger.level = logging.root.level
 
     if not logger.isEnabledFor(level):
         return False
