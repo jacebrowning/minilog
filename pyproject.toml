@@ -1,7 +1,7 @@
 [tool.poetry]
 
 name = "minilog"
-version = "1.5b2"
+version = "1.5"
 description = "Minimalistic wrapper for Python logging."
 
 license = "MIT"
@@ -49,8 +49,8 @@ pydocstyle = "*"
 mypy = "~0.761"
 
 # Testing
-pytest = "^5.3"
-pytest-describe = "*"
+pytest = "^5.4"
+pytest-describe = { git = "https://github.com/jacebrowning/pytest-describe", branch = "pytest-5.4-support" }
 pytest-expecter = "*"
 pytest-repeat = "*"
 pytest-random = "*"
