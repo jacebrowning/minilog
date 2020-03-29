@@ -3,6 +3,8 @@
 This package intends to be a drop-in replacement for `logging.Logger` objects. It supports the standard logging API:
 
 ```python
+import log
+
 log.debug(message, *args)
 log.info(message, *args)
 log.warning(message, *args)
@@ -17,6 +19,8 @@ log.log(level, message, *args)
 As well as convenience methods:
 
 ```python
+import log
+
 log.warn(message, *args)  # warning
 
 log.d(message, *args)     # debug

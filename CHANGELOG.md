@@ -1,3 +1,7 @@
+# 1.5 (unreleased)
+
+- Fixed `init()` to handle invalid `verbosity` levels and default to **DEBUG**.
+
 # 1.4.1 (2020-03-22)
 
 - Fixed new loggers to inherit the root logging level when their parent has none set.
