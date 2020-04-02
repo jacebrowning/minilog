@@ -8,14 +8,13 @@ edit_uri: https://github.com/jacebrowning/minilog/edit/develop/docs
 theme: readthedocs
 
 markdown_extensions:
-  - codehilite:
-      linenums: true
+  - codehilite
 
 nav:
-- Home: index.md
-- Logging: logging.md
-- Extras: extras.md
-- About:
-  - Release Notes: about/changelog.md
-  - Contributing: about/contributing.md
-  - License: about/license.md
+  - Home: index.md
+  - Logging: logging.md
+  - Extras: extras.md
+  - About:
+      - Release Notes: about/changelog.md
+      - Contributing: about/contributing.md
+      - License: about/license.md
