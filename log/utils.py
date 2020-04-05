@@ -8,10 +8,12 @@ from . import filters, helpers, state
 
 
 def create_logger_record(level, message, *args, exc_info=None, **kwargs) -> bool:
-    if 'pytest' in sys.modules:
-        filters.install(logging.root)
-    elif not state.initialized:
-        helpers.init()
+    if not getattr(logging, '_minilog', False):
+        if 'pytest' in sys.modules:
+            filters.install(logging.root)
+        elif not state.initialized:
+            helpers.init()
+        setattr(logging, '_minilog', True)
 
     frame = inspect.currentframe().f_back.f_back.f_back  # type: ignore
     assert frame
