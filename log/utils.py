@@ -36,12 +36,11 @@ def create_logger_record(
 
 
 def ensure_initialized():
-    if not getattr(logging, '_minilog', False):
+    if not state.initialized:
         if 'pytest' in sys.modules:
             filters.install(logging.root)
-        elif not state.initialized:
+        else:
             helpers.init()
-        setattr(logging, '_minilog', True)
 
 
 def parse_name(custom_name: str, frame_info: Dict) -> Tuple[str, str]:

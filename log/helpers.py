@@ -4,7 +4,7 @@ import logging
 import warnings
 from importlib import reload
 
-from . import filters, settings
+from . import filters, settings, state
 
 
 __all__ = ['reset', 'init', 'silence']
@@ -58,6 +58,8 @@ def init(*, debug=False, verbosity=None, **kwargs):
             handler.setFormatter(formatter)
 
     filters.install(logging.root)
+
+    state.initialized = True
 
 
 def silence(*names, allow_info=False, allow_warning=False, allow_error=False):
