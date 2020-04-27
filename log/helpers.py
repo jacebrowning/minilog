@@ -74,3 +74,4 @@ def silence(*names, allow_info=False, allow_warning=False, allow_error=False):
 
     for name in names:
         logging.getLogger(name).setLevel(level)
+        state.silenced.add(name)
