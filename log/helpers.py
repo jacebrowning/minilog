@@ -20,6 +20,8 @@ VERBOSITY_TO_LEVEL = {
 def reset():
     logging.shutdown()
     reload(logging)
+    state.initialized = False
+    state.silenced.clear()
 
 
 def init(*, debug=False, verbosity=None, **kwargs):
