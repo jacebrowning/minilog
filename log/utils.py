@@ -17,11 +17,11 @@ def create_logger_record(
     if parent_name in state.silenced:
         return False
 
+    ensure_initialized()
+
     logger = get_logger(name, parent_name)
     if not logger.isEnabledFor(level):
         return False
-
-    ensure_initialized()
 
     record = logger.makeRecord(
         name,
@@ -46,6 +46,14 @@ def parse_name(custom_name: str, frame_info: Dict) -> Tuple[str, str]:
     return module_name, parent_module_name
 
 
+def ensure_initialized():
+    if not state.initialized:
+        if 'pytest' in sys.modules:
+            filters.install(logging.root)
+        else:
+            helpers.init()
+
+
 def get_logger(name: str, parent_name: str):
     logger = logging.getLogger(name)
     if not logger.level:
@@ -54,11 +62,3 @@ def get_logger(name: str, parent_name: str):
     if not logger.level:
         logger.level = logging.root.level
     return logger
-
-
-def ensure_initialized():
-    if not state.initialized:
-        if 'pytest' in sys.modules:
-            filters.install(logging.root)
-        else:
-            helpers.init()
