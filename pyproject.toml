@@ -1,7 +1,7 @@
 [tool.poetry]
 
 name = "minilog"
-version = "1.6b5"
+version = "1.6b6"
 description = "Minimalistic wrapper for Python logging."
 
 license = "MIT"

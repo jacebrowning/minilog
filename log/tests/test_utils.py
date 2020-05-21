@@ -26,3 +26,6 @@ def describe_parse_name():
     def it_uses_the_filename_when_main(expect):
         frame_info = {'__file__': 'my_package/my_module.py'}
         expect(parse_name('__main__', frame_info)[0]) == 'my_package.my_module'
+
+    def it_handles_interactive_sessions(expect):
+        expect(parse_name('__main__', {})[0]) == 'interactive'

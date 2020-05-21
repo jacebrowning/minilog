@@ -41,7 +41,10 @@ def create_logger_record(
 def parse_name(custom_name: str, frame_info: Dict) -> Tuple[str, str]:
     module_name = custom_name or frame_info['__name__']
     if module_name == '__main__':
-        module_name = frame_info['__file__'].split('.')[0].replace('/', '.')
+        try:
+            module_name = frame_info['__file__'].split('.')[0].replace('/', '.')
+        except KeyError:
+            module_name = 'interactive'
     parent_module_name = module_name.split('.')[0]
     return module_name, parent_module_name
 
@@ -50,7 +53,7 @@ def ensure_initialized():
     if not state.initialized:
         if 'pytest' in sys.modules:
             filters.install(logging.root)
-        else:
+        else:  # pragma: no cover
             helpers.init()
 
 
