@@ -1,4 +1,4 @@
-# 1.6 (beta)
+# 1.6 (2020-05-24)
 
 - Updated logging to use the source filename when the module is `'__main__'`.
 
