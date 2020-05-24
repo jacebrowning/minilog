@@ -1,4 +1,8 @@
-# 1.5 (unreleased)
+# 1.6 (2020-05-24)
+
+- Updated logging to use the source filename when the module is `'__main__'`.
+
+# 1.5 (2020-03-28)
 
 - Fixed `init()` to handle invalid `verbosity` levels and default to **DEBUG**.
 

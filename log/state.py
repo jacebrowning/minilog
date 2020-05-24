@@ -1,7 +1,5 @@
-import logging
+from typing import Set
 
-
-default_level = logging.INFO
-default_format = "%(levelname)s: %(name)s: %(message)s"
 
 initialized = False
+silenced: Set[str] = set()

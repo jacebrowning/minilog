@@ -4,7 +4,7 @@ import logging
 import warnings
 from importlib import reload
 
-from . import filters, state
+from . import filters, settings, state
 
 
 __all__ = ['reset', 'init', 'silence']
@@ -20,6 +20,8 @@ VERBOSITY_TO_LEVEL = {
 def reset():
     logging.shutdown()
     reload(logging)
+    state.initialized = False
+    state.silenced.clear()
 
 
 def init(*, debug=False, verbosity=None, **kwargs):
@@ -37,15 +39,15 @@ def init(*, debug=False, verbosity=None, **kwargs):
 
     custom_format = kwargs.get('format')
     if debug:
-        state.default_level = logging.DEBUG
+        settings.DEFAULT_LEVEL = logging.DEBUG
     elif verbosity is not None:
         try:
-            state.default_level = VERBOSITY_TO_LEVEL[verbosity]
+            settings.DEFAULT_LEVEL = VERBOSITY_TO_LEVEL[verbosity]
         except KeyError:
-            state.default_level = logging.DEBUG
+            settings.DEFAULT_LEVEL = logging.DEBUG
 
-    kwargs['level'] = kwargs.get('level', state.default_level)
-    kwargs['format'] = kwargs.get('format', state.default_format)
+    kwargs['level'] = kwargs.get('level', settings.DEFAULT_LEVEL)
+    kwargs['format'] = kwargs.get('format', settings.DEFAULT_FORMAT)
     logging.basicConfig(**kwargs)
 
     if custom_format:
@@ -74,3 +76,4 @@ def silence(*names, allow_info=False, allow_warning=False, allow_error=False):
 
     for name in names:
         logging.getLogger(name).setLevel(level)
+        state.silenced.add(name)
