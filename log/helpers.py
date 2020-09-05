@@ -2,7 +2,6 @@
 
 import logging
 import sys
-import warnings
 from importlib import reload
 
 from . import filters, settings, state
@@ -26,19 +25,6 @@ def reset():
 
 
 def init(*, debug=False, verbosity=None, **kwargs):
-    if 'reset' in kwargs:  # pragma: no cover
-        warnings.warn(
-            (
-                "'reset' option will be removed in the next major version."
-                " Use 'log.reset()' instead."
-            ),
-            DeprecationWarning,
-        )
-        should_reset = kwargs.pop('reset')
-        if should_reset:
-            reset()
-
-    custom_format = kwargs.get('format')
     if debug:
         settings.DEFAULT_LEVEL = logging.DEBUG
     elif verbosity is not None:
@@ -51,6 +37,7 @@ def init(*, debug=False, verbosity=None, **kwargs):
     kwargs['format'] = kwargs.get('format', settings.DEFAULT_FORMAT)
     logging.basicConfig(**kwargs)
 
+    custom_format = kwargs.get('format')
     if custom_format:
         formatter = logging.Formatter(
             fmt=custom_format,
@@ -61,7 +48,6 @@ def init(*, debug=False, verbosity=None, **kwargs):
             handler.setFormatter(formatter)
 
     filters.install(logging.root)
-
     state.initialized = True
 
 
@@ -69,7 +55,7 @@ def silence(*names, allow_info=False, allow_warning=False, allow_error=False):
     if not state.initialized:
         if 'pytest' in sys.modules:
             filters.install(logging.root)
-        else:  # pragma: no cover
+        else:
             init()
 
     if allow_info:
