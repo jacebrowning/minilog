@@ -40,11 +40,11 @@ python = "^3.6"
 [tool.poetry.dev-dependencies]
 
 # Formatters
-black = "=19.10b0"
-isort = "=4.3.21"
+black = "=20.8b1"
+isort = "=5.5.1"
 
 # Linters
-pylint = { git = "https://github.com/PyCQA/pylint", rev = "e169e83e52fedc6624235d45e8e8737294a0fedf" } # use 2.5.4 when released
+pylint = "~2.6.0"
 pydocstyle = "*"
 mypy = "~0.761"
 
