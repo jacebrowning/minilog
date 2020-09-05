@@ -16,15 +16,16 @@ Every project should utilize logging, but for simple use cases, this requires a 
 ```python
 import logging
 
-logging.basicConfig(
-    level=logging.INFO,
-    format="%(levelname)s: %(name)s: %(message)s",
-)
-
 log = logging.getLogger(__name__)
 
 def greet(name):
     log.info("Hello, %s!", name)
+
+if __name__ == "__main__":
+    logging.basicConfig(
+        level=logging.INFO,
+        format="%(levelname)s: %(name)s: %(message)s",
+    )
 ```
 
 with this package you can simply:
@@ -34,6 +35,9 @@ import log
 
 def greet(name):
     log.info("Hello, %s!", name)
+
+if __name__ == "__main__":
+    log.init()
 ```
 
 It will produce the exact same standard library `logging` records behind the scenes.

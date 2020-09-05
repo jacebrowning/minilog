@@ -1,6 +1,7 @@
 """Wrappers to eliminate boilerplate `logging` activities."""
 
 import logging
+import sys
 import warnings
 from importlib import reload
 
@@ -65,6 +66,12 @@ def init(*, debug=False, verbosity=None, **kwargs):
 
 
 def silence(*names, allow_info=False, allow_warning=False, allow_error=False):
+    if not state.initialized:
+        if 'pytest' in sys.modules:
+            filters.install(logging.root)
+        else:  # pragma: no cover
+            init()
+
     if allow_info:
         level = logging.INFO
     elif allow_warning:

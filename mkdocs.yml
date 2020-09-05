@@ -13,7 +13,7 @@ markdown_extensions:
 nav:
   - Home: index.md
   - Logging: logging.md
-  - Extras: extras.md
+  - Options: options.md
   - About:
       - Release Notes: about/changelog.md
       - Contributing: about/contributing.md
