@@ -2,10 +2,9 @@
 
 import inspect
 import logging
-import sys
 from typing import Dict, Tuple
 
-from . import filters, helpers, state
+from . import state
 
 
 def create_logger_record(
@@ -16,8 +15,6 @@ def create_logger_record(
     name, parent_name = parse_name(name, frame.f_globals)
     if parent_name in state.silenced:
         return False
-
-    ensure_initialized()
 
     logger = get_logger(name, parent_name)
     if not logger.isEnabledFor(level):
@@ -47,14 +44,6 @@ def parse_name(custom_name: str, frame_info: Dict) -> Tuple[str, str]:
             module_name = 'interactive'
     parent_module_name = module_name.split('.')[0]
     return module_name, parent_module_name
-
-
-def ensure_initialized():
-    if not state.initialized:
-        if 'pytest' in sys.modules:
-            filters.install(logging.root)
-        else:  # pragma: no cover
-            helpers.init()
 
 
 def get_logger(name: str, parent_name: str):
