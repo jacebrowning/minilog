@@ -1,7 +1,7 @@
 [tool.poetry]
 
 name = "minilog"
-version = "2.0b2"
+version = "2.0"
 description = "Minimalistic wrapper for Python logging."
 
 license = "MIT"
@@ -9,9 +9,7 @@ license = "MIT"
 authors = ["Jace Browning <jacebrowning@gmail.com>"]
 
 readme = "README.md"
-packages = [
-    { include = "log" }
-]
+packages = [ { include = "log" } ]
 
 homepage = "https://pypi.org/project/minilog"
 documentation = "https://minilog.readthedocs.io"

@@ -1,4 +1,4 @@
-# 2.0 (beta)
+# 2.0 (2020-09-10)
 
 - Removed automatic call to `init()` when creating the first logging record.
 - Removed `reset=True` option for `log.init()`. Use `log.reset()` instead.
