@@ -23,7 +23,7 @@ def create_logger_record(
     record = logger.makeRecord(
         name,
         level,
-        fn=frame.f_globals['__file__'],
+        fn=parse_fn(frame.f_globals),
         lno=frame.f_lineno,
         msg=message,
         args=args,
@@ -33,6 +33,10 @@ def create_logger_record(
     )
     logger.handle(record)
     return True
+
+
+def parse_fn(frame_info: Dict) -> str:
+    return frame_info.get('__file__', 'interactive')
 
 
 def parse_name(custom_name: str, frame_info: Dict) -> Tuple[str, str]:

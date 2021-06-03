@@ -1,6 +1,7 @@
 # pylint: disable=redefined-outer-name,unused-variable,expression-not-assigned,singleton-comparison
 
 import os
+
 import pytest
 from freezegun import freeze_time
 
@@ -38,7 +39,7 @@ def describe_text():
             log.exception("exception")
 
         expect(caplog.text).contains('Traceback ')
-        expect(caplog.text).contains('test_records.py", line 36, ')
+        expect(caplog.text).contains('test_records.py", line 37, ')
         expect(caplog.text).contains('ZeroDivisionError')
 
 
