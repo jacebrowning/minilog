@@ -1,3 +1,7 @@
+# 2.0.1 (2021-06-03)
+
+- Fixed logging within interactive sessions.
+
 # 2.0 (2020-09-10)
 
 - Removed automatic call to `init()` when creating the first logging record.
