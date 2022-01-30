@@ -6,8 +6,7 @@ from importlib import reload
 
 from . import filters, settings, state
 
-
-__all__ = ['reset', 'init', 'silence']
+__all__ = ["reset", "init", "silence"]
 
 VERBOSITY_TO_LEVEL = {
     0: logging.ERROR,
@@ -33,16 +32,16 @@ def init(*, debug=False, verbosity=None, **kwargs):
         except KeyError:
             settings.DEFAULT_LEVEL = logging.DEBUG
 
-    kwargs['level'] = kwargs.get('level', settings.DEFAULT_LEVEL)
-    kwargs['format'] = kwargs.get('format', settings.DEFAULT_FORMAT)
+    kwargs["level"] = kwargs.get("level", settings.DEFAULT_LEVEL)
+    kwargs["format"] = kwargs.get("format", settings.DEFAULT_FORMAT)
     logging.basicConfig(**kwargs)
 
-    custom_format = kwargs.get('format')
+    custom_format = kwargs.get("format")
     if custom_format:
         formatter = logging.Formatter(
             fmt=custom_format,
-            datefmt=kwargs.get('datefmt'),
-            style=kwargs.get('style', '%'),
+            datefmt=kwargs.get("datefmt"),
+            style=kwargs.get("style", "%"),
         )
         for handler in logging.root.handlers:
             handler.setFormatter(formatter)
@@ -53,7 +52,7 @@ def init(*, debug=False, verbosity=None, **kwargs):
 
 def silence(*names, allow_info=False, allow_warning=False, allow_error=False):
     if not state.initialized:
-        if 'pytest' in sys.modules:
+        if "pytest" in sys.modules:
             filters.install(logging.root)
         else:
             init()

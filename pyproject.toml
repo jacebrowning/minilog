@@ -1,7 +1,7 @@
 [tool.poetry]
 
 name = "minilog"
-version = "2.0.1"
+version = "2.1b1"
 description = "Minimalistic wrapper for Python logging."
 
 license = "MIT"
@@ -9,7 +9,7 @@ license = "MIT"
 authors = ["Jace Browning <jacebrowning@gmail.com>"]
 
 readme = "README.md"
-packages = [ { include = "log" } ]
+packages = [{ include = "log" }]
 
 homepage = "https://pypi.org/project/minilog"
 documentation = "https://minilog.readthedocs.io"
@@ -23,9 +23,10 @@ classifiers = [
     "Natural Language :: English",
     "Operating System :: OS Independent",
     "Programming Language :: Python :: 3",
-    "Programming Language :: Python :: 3.6",
     "Programming Language :: Python :: 3.7",
     "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
     "Programming Language :: Python",
     "Topic :: Software Development",
     "Topic :: System :: Logging",
@@ -33,13 +34,13 @@ classifiers = [
 
 [tool.poetry.dependencies]
 
-python = "^3.6"
+python = "^3.7"
 
 [tool.poetry.dev-dependencies]
 
 # Formatters
-black = "=20.8b1"
-isort = "=5.5.1"
+black = "^22.1"
+isort = "^5.10"
 
 # Linters
 pylint = "~2.6.0"
@@ -72,8 +73,11 @@ ipython = "^7.12.0"
 
 [tool.black]
 
-target-version = ["py36", "py37"]
-skip-string-normalization = true
+quiet = true
+
+[tool.isort]
+
+profile = "black"
 
 [build-system]
 

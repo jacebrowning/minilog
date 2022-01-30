@@ -1,7 +1,6 @@
 import logging
 
-
-log = logging.getLogger('3rd-party')
+log = logging.getLogger("3rd-party")
 
 
 def do_3rd_party_thing():

@@ -8,7 +8,7 @@ from . import state
 
 
 def create_logger_record(
-    level, message, *args, name: str = '', exc_info=None, **kwargs
+    level, message, *args, name: str = "", exc_info=None, **kwargs
 ) -> bool:
     frame = inspect.currentframe().f_back.f_back.f_back  # type: ignore
 
@@ -36,17 +36,17 @@ def create_logger_record(
 
 
 def parse_fn(frame_info: Dict) -> str:
-    return frame_info.get('__file__', 'interactive')
+    return frame_info.get("__file__", "interactive")
 
 
 def parse_name(custom_name: str, frame_info: Dict) -> Tuple[str, str]:
-    module_name = custom_name or frame_info['__name__']
-    if module_name == '__main__':
+    module_name = custom_name or frame_info["__name__"]
+    if module_name == "__main__":
         try:
-            module_name = frame_info['__file__'].split('.')[0].replace('/', '.')
+            module_name = frame_info["__file__"].split(".")[0].replace("/", ".")
         except KeyError:
-            module_name = 'interactive'
-    parent_module_name = module_name.split('.')[0]
+            module_name = "interactive"
+    parent_module_name = module_name.split(".")[0]
     return module_name, parent_module_name
 
 

@@ -5,8 +5,7 @@ import sys
 
 from . import utils
 
-
-__all__ = ['log', 'debug', 'info', 'warning', 'error', 'critical', 'exception']
+__all__ = ["log", "debug", "info", "warning", "error", "critical", "exception"]
 
 
 def log(level, message, *args, **kwargs):
@@ -34,5 +33,5 @@ def critical(message, *args, **kwargs):
 
 
 def exception(message, *args, **kwargs):
-    kwargs['exc_info'] = kwargs.get('exc_info', sys.exc_info())
+    kwargs["exc_info"] = kwargs.get("exc_info", sys.exc_info())
     log(logging.ERROR, message, *args, **kwargs)

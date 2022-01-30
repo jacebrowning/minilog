@@ -1,3 +1,7 @@
+# 2.1 (beta)
+
+- Dropped support for Python 3.6.
+
 # 2.0.1 (2021-06-03)
 
 - Fixed logging within interactive sessions.

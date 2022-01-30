@@ -6,21 +6,21 @@ import log
 
 
 @pytest.mark.parametrize(
-    'name, levelname',
+    "name, levelname",
     [
-        ('c', 'CRITICAL'),
-        ('critical', 'CRITICAL'),
-        ('d', 'DEBUG'),
-        ('debug', 'DEBUG'),
-        ('e', 'ERROR'),
-        ('error', 'ERROR'),
-        ('exc', 'ERROR'),
-        ('exception', 'ERROR'),
-        ('i', 'INFO'),
-        ('info', 'INFO'),
-        ('w', 'WARNING'),
-        ('warn', 'WARNING'),
-        ('warning', 'WARNING'),
+        ("c", "CRITICAL"),
+        ("critical", "CRITICAL"),
+        ("d", "DEBUG"),
+        ("debug", "DEBUG"),
+        ("e", "ERROR"),
+        ("error", "ERROR"),
+        ("exc", "ERROR"),
+        ("exception", "ERROR"),
+        ("i", "INFO"),
+        ("info", "INFO"),
+        ("w", "WARNING"),
+        ("warn", "WARNING"),
+        ("warning", "WARNING"),
     ],
 )
 def test_level_mapping(expect, caplog, name, levelname):

@@ -17,17 +17,17 @@ def describe_text():
         expect(caplog.text) == "ERROR    tests.demo:demo.py:5 Hello, caller!\n"
 
     @pytest.mark.last
-    @freeze_time('2019-01-15')
+    @freeze_time("2019-01-15")
     def it_can_be_formatted_with_init(expect, caplog):
         log.init(
             level=log.WARNING,
-            format='%(asctime)s %(relpath)s:%(lineno)s: %(message)s',
-            datefmt='%Y-%m',
+            format="%(asctime)s %(relpath)s:%(lineno)s: %(message)s",
+            datefmt="%Y-%m",
         )
 
         demo.greet("format")
 
-        if os.name == 'nt':
+        if os.name == "nt":
             expect(caplog.text) == "2019-01 tests\\demo.py:5: Hello, format!\n"
         else:
             expect(caplog.text) == "2019-01 tests/demo.py:5: Hello, format!\n"
@@ -38,35 +38,35 @@ def describe_text():
         except ZeroDivisionError:
             log.exception("exception")
 
-        expect(caplog.text).contains('Traceback ')
+        expect(caplog.text).contains("Traceback ")
         expect(caplog.text).contains('test_records.py", line 37, ')
-        expect(caplog.text).contains('ZeroDivisionError')
+        expect(caplog.text).contains("ZeroDivisionError")
 
 
 def describe_silence():
     def when_off(expect, caplog):
-        log.silence('3rd-party')
+        log.silence("3rd-party")
 
         other.do_3rd_party_thing()
 
         expect(caplog.records) == []
 
     def with_errors(expect, caplog):
-        log.silence('3rd-party', allow_error=True)
+        log.silence("3rd-party", allow_error=True)
 
         other.do_3rd_party_thing()
 
         expect(len(caplog.records)) == 1
 
     def with_warnings(expect, caplog):
-        log.silence('3rd-party', allow_warning=True)
+        log.silence("3rd-party", allow_warning=True)
 
         other.do_3rd_party_thing()
 
         expect(len(caplog.records)) == 2
 
     def with_infos(expect, caplog):
-        log.silence('3rd-party', allow_info=True)
+        log.silence("3rd-party", allow_info=True)
 
         other.do_3rd_party_thing()
 

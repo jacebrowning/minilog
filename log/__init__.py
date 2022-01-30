@@ -5,7 +5,6 @@ from logging import DEBUG, ERROR, INFO, WARNING
 from .helpers import *
 from .logger import *
 
-
 WARN = WARNING
 
 d = debug
