@@ -27,6 +27,7 @@ log.d(message, *args)     # debug
 log.i(message, *args)     # info
 log.w(message, *args)     # warning
 log.e(message, *args)     # error
+log.c(message, *args)     # critical
 
 log.exc(message, *args)   # exception
 ```
