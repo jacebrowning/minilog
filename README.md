@@ -6,8 +6,11 @@ A minimalistic logging wrapper for Python.
 [![Windows Build Status](https://img.shields.io/appveyor/ci/jacebrowning/minilog.svg?label=windows)](https://ci.appveyor.com/project/jacebrowning/minilog)
 [![Coverage Status](https://img.shields.io/coveralls/jacebrowning/minilog/main.svg)](https://coveralls.io/r/jacebrowning/minilog)
 [![Scrutinizer Code Quality](https://img.shields.io/scrutinizer/g/jacebrowning/minilog.svg)](https://scrutinizer-ci.com/g/jacebrowning/minilog)
-[![PyPI Version](https://img.shields.io/pypi/v/minilog.svg)](https://pypi.org/project/minilog)
 [![PyPI License](https://img.shields.io/pypi/l/minilog.svg)](https://pypi.org/project/minilog)
+[![PyPI Version](https://img.shields.io/pypi/v/minilog.svg)](https://pypi.org/project/minilog)
+[![PyPI Downloads](https://img.shields.io/pypi/dm/minilog.svg?color=orange)](https://pypistats.org/packages/minilog)
+
+[![PyPI Version](https://img.shields.io/pypi/v/verchew.svg)](https://pypi.python.org/pypi/verchew)
 
 ## Usage
 
