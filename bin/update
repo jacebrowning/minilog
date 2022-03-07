@@ -2,6 +2,7 @@
 # -*- coding: utf-8 -*-
 
 import os
+from contextlib import suppress
 import importlib
 import tempfile
 import shutil
@@ -48,6 +49,7 @@ def run():
 
 def copy():
     for filename in [
+        '.appveyor.yml',
         '.coveragerc',
         '.gitattributes',
         '.gitignore',
@@ -66,7 +68,8 @@ def copy():
         src = os.path.join(TMP, CONFIG['project_name'], filename)
         dst = os.path.join(CWD, filename)
         print("Updating " + filename)
-        shutil.copy(src, dst)
+        with suppress(FileNotFoundError):
+            shutil.copy(src, dst)
 
 
 if __name__ == '__main__':
