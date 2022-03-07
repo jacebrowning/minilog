@@ -2,7 +2,7 @@
 
 import logging
 
-from log.utils import create_logger_record, parse_name
+from log.utils import create_logger_record, format_message, parse_name
 
 
 def describe_create_logger_record():
@@ -29,3 +29,12 @@ def describe_parse_name():
 
     def it_handles_interactive_sessions(expect):
         expect(parse_name("__main__", {})[0]) == "interactive"
+
+
+def describe_format_message():
+    def it_formats_structures(expect):
+        data = {x: x * 10 for x in range(20)}
+        expect(format_message(data).count("\n")) == 19
+
+    def it_preserves_strings(expect):
+        expect(format_message("foobar")) == "foobar"

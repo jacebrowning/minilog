@@ -2,6 +2,7 @@
 
 import inspect
 import logging
+from pprint import pformat
 from typing import Dict, Tuple
 
 from . import state
@@ -24,9 +25,9 @@ def create_logger_record(
     record = logger.makeRecord(
         name,
         level,
-        fn=parse_fn(frame.f_globals),
+        fn=parse_filename(frame.f_globals),
         lno=frame.f_lineno,
-        msg=message,
+        msg=format_message(message),
         args=args,
         exc_info=exc_info,
         extra=kwargs,
@@ -34,10 +35,6 @@ def create_logger_record(
     )
     logger.handle(record)
     return True
-
-
-def parse_fn(frame_info: Dict) -> str:
-    return frame_info.get("__file__", "interactive")
 
 
 def parse_name(custom_name: str, frame_info: Dict) -> Tuple[str, str]:
@@ -59,3 +56,13 @@ def get_logger(name: str, parent_name: str):
     if not logger.level:
         logger.level = logging.root.level
     return logger
+
+
+def parse_filename(frame_info: Dict) -> str:
+    return frame_info.get("__file__", "interactive")
+
+
+def format_message(value) -> str:
+    if not isinstance(value, str):
+        value = pformat(value)
+    return value

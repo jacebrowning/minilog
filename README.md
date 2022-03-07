@@ -43,7 +43,7 @@ if __name__ == "__main__":
     log.init()
 ```
 
-It will produce the exact same standard library `logging` records behind the scenes.
+It will produce the exact same standard library `logging` records behind the scenes with automatic formatting for non-strings.
 
 ## Installation
 
