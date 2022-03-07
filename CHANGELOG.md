@@ -1,6 +1,7 @@
-# 2.1 (beta)
+# 2.1 (2022-03-06)
 
 - Dropped support for Python 3.6.
+- Added automatic formatting of non-string messages.
 
 # 2.0.1 (2021-06-03)
 
