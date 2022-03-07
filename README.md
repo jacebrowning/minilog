@@ -10,8 +10,6 @@ A minimalistic logging wrapper for Python.
 [![PyPI Version](https://img.shields.io/pypi/v/minilog.svg)](https://pypi.org/project/minilog)
 [![PyPI Downloads](https://img.shields.io/pypi/dm/minilog.svg?color=orange)](https://pypistats.org/packages/minilog)
 
-[![PyPI Version](https://img.shields.io/pypi/v/verchew.svg)](https://pypi.python.org/pypi/verchew)
-
 ## Usage
 
 Every project should utilize logging, but for simple use cases, this requires a bit too much boilerplate. Instead of including all of this in your modules:
