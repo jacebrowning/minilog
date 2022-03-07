@@ -11,6 +11,7 @@ def create_logger_record(
     level, message, *args, name: str = "", exc_info=None, **kwargs
 ) -> bool:
     frame = inspect.currentframe().f_back.f_back.f_back  # type: ignore
+    assert frame
 
     name, parent_name = parse_name(name, frame.f_globals)
     if parent_name in state.silenced:

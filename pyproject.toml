@@ -45,7 +45,8 @@ isort = "^5.10"
 # Linters
 pylint = "~2.6.0"
 pydocstyle = "*"
-mypy = "~0.761"
+mypy = "~0.931"
+types-freezegun = "*"
 
 # Testing
 pytest = "^5.4"
@@ -78,6 +79,32 @@ quiet = true
 [tool.isort]
 
 profile = "black"
+
+[tool.mypy]
+
+ignore_missing_imports = true
+no_implicit_optional = true
+check_untyped_defs = true
+
+cache_dir = ".cache/mypy/"
+
+[tool.pytest]
+
+addopts = """
+--strict-markers
+
+-r sxX
+--show-capture=log
+
+--cov-report=xml
+--cov-report=html
+--cov-report=term-missing:skip-covered
+--no-cov-on-fail
+"""
+
+cache_dir = ".cache/pytest/"
+
+markers = ["last"]
 
 [build-system]
 
