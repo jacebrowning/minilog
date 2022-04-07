@@ -22,7 +22,7 @@ log.init(format=…, debug=True)
 
 ### Verbosity Option
 
-To work with frameworks that provide a `verbosity` level in their CLI frameworks (such as [Django](https://docs.djangoproject.com/en/2.1/ref/django-admin/#cmdoption-verbosity)), that can be used instead:
+To work with frameworks that provide a `verbosity` level in their CLI frameworks (such as [Django](https://docs.djangoproject.com/en/4.0/ref/django-admin/#cmdoption-verbosity)), that can be used instead:
 
 ```python
 log.init(format=…, verbosity=verbosity)
