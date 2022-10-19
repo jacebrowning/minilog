@@ -1,6 +1,8 @@
 # Initialization
 
-To customize logging formats and levels, `minilog` supports the same initialization arguments as [`logging.basicConfig`](https://docs.python.org/3/library/logging.html#logging.basicConfig). To set the format for all logging handlers:
+`minilog` defaults to INFO level using a simple log format. It supports the same initialization arguments as [`logging.basicConfig`](https://docs.python.org/3/library/logging.html#logging.basicConfig).
+
+To set the format for all logging handlers:
 
 ```python
 log.init(format="%(levelname)s: %(name)s: %(message)s")
