@@ -59,7 +59,7 @@ pytest-profiling = "*"
 freezegun = "*"
 
 # Reports
-coveragespace = "^4.1"
+coveragespace = "^5.0"
 
 # Documentation
 mkdocs = "~1.2"
