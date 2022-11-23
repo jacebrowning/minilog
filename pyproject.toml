@@ -1,7 +1,7 @@
 [tool.poetry]
 
 name = "minilog"
-version = "2.1"
+version = "2.2b1"
 description = "Minimalistic wrapper for Python logging."
 
 license = "MIT"
@@ -23,7 +23,6 @@ classifiers = [
     "Natural Language :: English",
     "Operating System :: OS Independent",
     "Programming Language :: Python :: 3",
-    "Programming Language :: Python :: 3.7",
     "Programming Language :: Python :: 3.8",
     "Programming Language :: Python :: 3.9",
     "Programming Language :: Python :: 3.10",
@@ -34,7 +33,7 @@ classifiers = [
 
 [tool.poetry.dependencies]
 
-python = "^3.7"
+python = "^3.8"
 
 [tool.poetry.dev-dependencies]
 
@@ -59,7 +58,7 @@ pytest-profiling = "*"
 freezegun = "*"
 
 # Reports
-coveragespace = "^5.0"
+coveragespace = "^6.0.1"
 
 # Documentation
 mkdocs = "~1.2"
