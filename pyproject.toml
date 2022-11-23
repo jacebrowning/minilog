@@ -48,9 +48,9 @@ mypy = "~0.931"
 types-freezegun = "*"
 
 # Testing
-pytest = "^5.4"
-pytest-describe = "^1.0"
-pytest-expecter = "*"
+pytest = "^7.2"
+pytest-describe = "^2.0"
+pytest-expecter = "^3.0"
 pytest-repeat = "*"
 pytest-random = "*"
 pytest-cov = "*"
