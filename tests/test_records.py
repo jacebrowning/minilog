@@ -11,12 +11,12 @@ from . import demo, other
 
 
 def describe_text():
+    @pytest.mark.first
     def it_includes_the_caller_location(expect, caplog):
         demo.greet("caller")
 
         expect(caplog.text) == "ERROR    tests.demo:demo.py:5 Hello, caller!\n"
 
-    @pytest.mark.last
     @freeze_time("2019-01-15")
     def it_can_be_formatted_with_init(expect, caplog):
         log.init(
