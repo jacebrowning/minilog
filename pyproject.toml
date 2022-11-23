@@ -51,9 +51,9 @@ types-freezegun = "*"
 pytest = "^7.2"
 pytest-describe = "^2.0"
 pytest-expecter = "^3.0"
-pytest-repeat = "*"
-pytest-random = "*"
+pytest-ordering = "*"
 pytest-cov = "*"
+pytest-repeat = "*"
 pytest-profiling = "*"
 freezegun = "*"
 
@@ -102,7 +102,7 @@ addopts = """
 
 cache_dir = ".cache/pytest/"
 
-markers = ["last"]
+markers = ["first", "last"]
 
 [build-system]
 

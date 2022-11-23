@@ -1,6 +1,8 @@
 {
     "cSpell.words": [
+        "caplog",
         "coveragerc",
+        "freezegun",
         "minilog",
         "minimalistic",
         "sinfo",
