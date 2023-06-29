@@ -5,6 +5,7 @@
         "freezegun",
         "minilog",
         "minimalistic",
+        "mypy",
         "sinfo",
         "USERPROFILE",
         "venv",
