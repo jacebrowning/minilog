@@ -1,8 +1,9 @@
 # Release Notes
 
-## 2.2 (beta)
+## 2.2 (2023-06-29)
 
 - Dropped support for Python 3.7.
+- Added `py.typed` for better `mypy` support.
 
 ## 2.1 (2022-03-06)
 
