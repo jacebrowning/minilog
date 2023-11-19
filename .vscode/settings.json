@@ -5,6 +5,7 @@
         "freezegun",
         "minilog",
         "minimalistic",
+        "mkdocs",
         "mypy",
         "sinfo",
         "USERPROFILE",
