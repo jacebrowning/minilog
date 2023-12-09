@@ -1,5 +1,6 @@
 """Implements the "magic" to create `logging` records for the caller."""
 
+import dataclasses
 import inspect
 import logging
 from pprint import pformat
@@ -63,6 +64,8 @@ def parse_filename(frame_info: Dict) -> str:
 
 
 def format_message(value) -> str:
+    if dataclasses.is_dataclass(value):
+        value = dataclasses.asdict(value)
     if not isinstance(value, str):
         value = pformat(value)
     return value
