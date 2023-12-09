@@ -1,5 +1,9 @@
 # Release Notes
 
+## 2.3 (2023-12-09)
+
+- Added automatic formatting for dataclasses.
+
 ## 2.2 (2023-06-29)
 
 - Dropped support for Python 3.7.

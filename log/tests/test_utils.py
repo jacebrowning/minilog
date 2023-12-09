@@ -1,6 +1,7 @@
-# pylint: disable=redefined-outer-name,unused-variable,expression-not-assigned,singleton-comparison
+# pylint: disable=redefined-outer-name,unused-variable,expression-not-assigned,singleton-comparison,disallowed-name
 
 import logging
+from dataclasses import dataclass
 
 from log.utils import create_logger_record, format_message, parse_name
 
@@ -35,6 +36,16 @@ def describe_format_message():
     def it_formats_structures(expect):
         data = {x: x * 10 for x in range(20)}
         expect(format_message(data).count("\n")) == 19
+
+    def it_formats_dataclasses(expect):
+        @dataclass
+        class Example:
+            foo: int = 1
+            bar: str = "abc"
+
+        example = Example()
+
+        expect(format_message(example)) == "{'bar': 'abc', 'foo': 1}"
 
     def it_preserves_strings(expect):
         expect(format_message("foobar")) == "foobar"
