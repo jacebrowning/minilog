@@ -1,6 +1,6 @@
 # pylint: disable=wildcard-import
 
-from logging import DEBUG, ERROR, INFO, WARNING
+from logging import CRITICAL, DEBUG, ERROR, INFO, WARNING
 
 from .helpers import *
 from .logger import *

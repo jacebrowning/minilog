@@ -1,5 +1,9 @@
 # Release Notes
 
+## 2.3.1 (2024-10-24)
+
+- Added `CRITICAL` log level to the package namespace.
+
 ## 2.3 (2023-12-09)
 
 - Added automatic formatting for dataclasses.
