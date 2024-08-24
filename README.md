@@ -2,9 +2,9 @@
 
 A minimalistic logging wrapper for Python.
 
-[![Unix Build Status](https://img.shields.io/travis/com/jacebrowning/minilog.svg?label=unix)](https://travis-ci.com/jacebrowning/minilog)
-[![Windows Build Status](https://img.shields.io/appveyor/ci/jacebrowning/minilog.svg?label=windows)](https://ci.appveyor.com/project/jacebrowning/minilog)
-[![Coverage Status](https://img.shields.io/coveralls/jacebrowning/minilog/main.svg)](https://coveralls.io/r/jacebrowning/minilog)
+[![Linux Build](https://img.shields.io/github/actions/workflow/status/jacebrowning/minilog/main.yml?branch=main&label=linux)](https://github.com/jacebrowning/minilog/actions)
+[![Windows Build](https://img.shields.io/appveyor/ci/jacebrowning/minilog/main.svg?label=windows)](https://ci.appveyor.com/project/jacebrowning/minilog)
+[![Code Coverage](https://img.shields.io/codecov/c/github/jacebrowning/minilog)](https://codecov.io/gh/jacebrowning/minilog)
 [![Scrutinizer Code Quality](https://img.shields.io/scrutinizer/g/jacebrowning/minilog.svg)](https://scrutinizer-ci.com/g/jacebrowning/minilog)
 [![PyPI License](https://img.shields.io/pypi/l/minilog.svg)](https://pypi.org/project/minilog)
 [![PyPI Version](https://img.shields.io/pypi/v/minilog.svg)](https://pypi.org/project/minilog)

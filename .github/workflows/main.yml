@@ -1,0 +1,45 @@
+name: main
+
+on: [push, pull_request]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ['3.8', '3.9', '3.10', '3.11']
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Set up Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v2
+      with:
+        python-version: ${{ matrix.python-version }}
+
+    - uses: Gr1N/setup-poetry@v8
+
+    - name: Check dependencies
+      run: make doctor
+
+    - uses: actions/cache@v2
+      with:
+        path: .venv
+        key: ${{ runner.os }}-poetry-${{ hashFiles('poetry.lock') }}
+
+    - name: Install dependencies
+      run: make install
+
+    - name: Check code
+      run: make check
+
+    - name: Test code
+      run: make test
+
+    - name: Upload coverage
+        uses: codecov/codecov-action@v4
+        if: steps.fork-check.outputs.is-fork == 'false'
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+          fail_ci_if_error: true
