@@ -16,11 +16,14 @@
   },
   "python.defaultInterpreterPath": ".venv/bin/python",
   "editor.formatOnSave": true,
-  "pylint.args": ["--rcfile=.pylint.ini"],
+  "pylint.args": [
+    "--rcfile=.pylint.ini"
+  ],
   "cSpell.words": [
     "appex",
     "autorefs",
     "builtins",
+    "chanage",
     "choco",
     "classproperties",
     "codehilite",
