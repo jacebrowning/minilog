@@ -254,14 +254,14 @@ toml = ["tomli ; python_full_version <= \"3.11.0a6\""]
 
 [[package]]
 name = "coveragespace"
-version = "6.0.1"
+version = "6.1"
 description = "A place to track your code coverage metrics."
 optional = false
-python-versions = ">=3.8,<4.0"
+python-versions = "<4.0,>=3.8"
 groups = ["dev"]
 files = [
-    {file = "coveragespace-6.0.1-py3-none-any.whl", hash = "sha256:993753f809752ea8c7403bbedcb81309853228611d4e6a766e890ad797be3fe8"},
-    {file = "coveragespace-6.0.1.tar.gz", hash = "sha256:c72ed7e59a5a8ddd55ebe5187578472567a02f8859ee643ed0c58a9aba8f8415"},
+    {file = "coveragespace-6.1-py3-none-any.whl", hash = "sha256:ca6ccd5eb32eb6ce5fe78de6c052353b9fbb378a886fde0838480defe33406a8"},
+    {file = "coveragespace-6.1.tar.gz", hash = "sha256:049c0b7b629ad43d72692f0f99b9f8a97936ad596f7f27c1af61323fba90ebef"},
 ]
 
 [package.dependencies]
