@@ -48,7 +48,7 @@ mypy = "^1.3"
 types-freezegun = "*"
 
 # Testing
-pytest = "^7.2"
+pytest = ">=7.2,<9.0"
 pytest-describe = "^2.0"
 pytest-expecter = "^3.0"
 pytest-ordering = "*"
