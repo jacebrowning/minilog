@@ -1444,14 +1444,14 @@ test = ["argcomplete (>=2.0)", "pre-commit", "pytest", "pytest-mock"]
 
 [[package]]
 name = "types-freezegun"
-version = "1.1.6"
+version = "1.1.10"
 description = "Typing stubs for freezegun"
 optional = false
 python-versions = "*"
 groups = ["dev"]
 files = [
-    {file = "types-freezegun-1.1.6.tar.gz", hash = "sha256:5c70a4b7444b8c7dd2800e0063d6fe721ab11209399264fa0f77af253dd8b14f"},
-    {file = "types_freezegun-1.1.6-py3-none-any.whl", hash = "sha256:eaa4ccac7f4ff92762b6e5d34c3c4e41a7763b6d09a8595e0224ff1f24c9d4e1"},
+    {file = "types-freezegun-1.1.10.tar.gz", hash = "sha256:cb3a2d2eee950eacbaac0673ab50499823365ceb8c655babb1544a41446409ec"},
+    {file = "types_freezegun-1.1.10-py3-none-any.whl", hash = "sha256:fadebe72213e0674036153366205038e1f95c8ca96deb4ef9b71ddc15413543e"},
 ]
 
 [[package]]
