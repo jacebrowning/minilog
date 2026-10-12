@@ -23,9 +23,11 @@ classifiers = [
     "Natural Language :: English",
     "Operating System :: OS Independent",
     "Programming Language :: Python :: 3",
-    "Programming Language :: Python :: 3.9",
-    "Programming Language :: Python :: 3.10",
     "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
+    "Programming Language :: Python :: 3.15",
     "Programming Language :: Python",
     "Topic :: Software Development",
     "Topic :: System :: Logging",
@@ -33,7 +35,7 @@ classifiers = [
 
 [tool.poetry.dependencies]
 
-python = "^3.8"
+python = "^3.11"
 
 [tool.poetry.group.dev.dependencies]
 
@@ -61,9 +63,8 @@ freezegun = "*"
 coveragespace = "^6.0.1"
 
 # Documentation
-mkdocs = "~1.2"
+mkdocs = "^1.6"
 pygments = "^2.15.0"
-jinja2 = ">=3.0,<3.2"
 
 # Tooling
 pyinstaller = "*"
