@@ -44,7 +44,7 @@ black = "^24.3"
 isort = "^5.10"
 
 # Linters
-pylint = ">=2.15,<3.3"
+pylint = "^4.0"
 pydocstyle = "*"
 mypy = "^2.4"
 types-freezegun = "*"
