@@ -4,42 +4,41 @@ on: [push, pull_request]
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        python-version: ['3.9', '3.10', '3.11']
+        python-version: ["3.11", "3.12", "3.13", "3.14", "3.15"]
 
     steps:
-    - uses: actions/checkout@v2
+      - uses: actions/checkout@v2
 
-    - name: Set up Python ${{ matrix.python-version }}
-      uses: actions/setup-python@v2
-      with:
-        python-version: ${{ matrix.python-version }}
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v2
+        with:
+          python-version: ${{ matrix.python-version }}
 
-    - uses: Gr1N/setup-poetry@v8
+      - uses: Gr1N/setup-poetry@v8
 
-    - name: Check dependencies
-      run: make doctor
+      - name: Check dependencies
+        run: make doctor
 
-    - uses: actions/cache@v4
-      with:
-        path: .venv
-        key: ${{ runner.os }}-${{ matrix.python-version }}-${{ hashFiles('poetry.lock') }}
+      - uses: actions/cache@v4
+        with:
+          path: .venv
+          key: ${{ runner.os }}-${{ matrix.python-version }}-${{ hashFiles('poetry.lock') }}
 
-    - name: Install dependencies
-      run: make install
+      - name: Install dependencies
+        run: make install
 
-    - name: Check code
-      run: make check
+      - name: Check code
+        run: make check
 
-    - name: Test code
-      run: make test
+      - name: Test code
+        run: make test
 
-    - name: Upload coverage
-      uses: codecov/codecov-action@v4
-      if: steps.fork-check.outputs.is-fork == 'false'
-      with:
-        token: ${{ secrets.CODECOV_TOKEN }}
-        fail_ci_if_error: true
+      - name: Upload coverage
+        uses: codecov/codecov-action@v4
+        if: steps.fork-check.outputs.is-fork == 'false'
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+          fail_ci_if_error: true

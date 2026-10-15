@@ -64,7 +64,7 @@ def parse_filename(frame_info: Dict) -> str:
 
 
 def format_message(value) -> str:
-    if dataclasses.is_dataclass(value):
+    if dataclasses.is_dataclass(value) and not isinstance(value, type):
         value = dataclasses.asdict(value)
     if not isinstance(value, str):
         value = pformat(value)
