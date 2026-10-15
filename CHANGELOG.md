@@ -1,5 +1,10 @@
 # Release Notes
 
+## 2.4 (2026-10-15)
+
+- Dropped support for Python 3.8, 3.9, and 3.10.
+- Added support for Python 3.13 and 3.14.
+
 ## 2.3.1 (2024-10-24)
 
 - Added `CRITICAL` log level to the package namespace.
