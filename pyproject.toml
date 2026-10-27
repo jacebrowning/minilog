@@ -41,7 +41,7 @@ python = "^3.11"
 
 # Formatters
 black = ">=24.3,<27.0"
-isort = "^5.10"
+isort = ">=5.10,<10.0"
 
 # Linters
 pylint = "^4.0"
